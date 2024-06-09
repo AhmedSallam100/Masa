@@ -70,10 +70,11 @@
   margin-left: 12px;
   padding: 18px;
   border-radius: 15px;
-  box-shadow: 0 0 7px #a3b9d273;
+  box-shadow: 0 0 7px #a3b9d233;
   background-color: var(--white-color);
   transition: 0.5s;
   width: 180px;
+  z-index: 999;
 }
 .header .container .ul-links .li-link .dropmenu.active {
   opacity: 1;

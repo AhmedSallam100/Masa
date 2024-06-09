@@ -111,7 +111,12 @@ function Success() {
           icon={"map-pin"}
           text={"تسليم المواد الي الموقع في اي منطقة بالمملكة وبالوقت المحدد"}
         />
-        <SuccessItem icon={"users-alt"} text={"رعاية مصالح العملاء"} />
+        <SuccessItem
+          effect={"left"}
+          duration={"1600"}
+          icon={"users-alt"}
+          text={"رعاية مصالح العملاء"}
+        />
       </div>
     </div>
   );
