@@ -1,0 +1,16 @@
+.main-title {
+  display: flex;
+  font-size: 28px;
+  justify-content: center;
+  margin: 0 auto 30px;
+  padding: 30px;
+  position: relative;
+  width: fit-content;
+}
+.main-title::before {
+  content: url(https://i.postimg.cc/jjVSFNCF/title-line.png);
+  position: absolute;
+  top: 60px;
+  transform: translateX(-50%);
+  transform: scale(0.7);
+}
