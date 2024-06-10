@@ -1,22 +1,25 @@
-/* @font-face {
+@font-face {
   font-family: aa-aniq;
-  src: url(../public/AA-ANIQ.otf);
-} */
+  src: url(../public/font/ArbFONTS-AA-ANIQ.otf);
+}
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Cairo", sans-serif;
+  font-family: aa-aniq;
+  /* font-family: "Cairo", sans-serif; */
 }
 :root {
   --main-color: #02245b;
   --second-color: #2c4976;
+  --third-color: #526a8e;
   --text-color: #1e1f22;
   --white-color: #fff;
   --black-color: #000;
   --bg-color: #f4f6fa;
   --main-tran: 0.3s;
+
 }
 ::selection {
   color: var(--white-color);

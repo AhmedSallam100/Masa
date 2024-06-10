@@ -78,7 +78,7 @@ const Header = () => {
               <Link to={"#reviews"}>الاقسام</Link>
             </li>
             <li className="li-link">
-              <Link to={"#hiring"}>المركز الاعلامي</Link>
+              <Link to={"MediaCenter"}>المركز الاعلامي</Link>
             </li>
             <li className="li-link">
               <div className="dropmenu-container">

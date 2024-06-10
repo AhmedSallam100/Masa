@@ -18,7 +18,7 @@ function WhoUs() {
       <div className="container">
         <div className="about-text">
           <h1 data-aos="fade-left" data-aos-duration="1000">
-            من نحن ؟
+          <span> من نحن ؟</span>
             <br />
             شركة ماس الخليج للصناعة
           </h1>
@@ -44,7 +44,7 @@ function WhoUs() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/about-img-1.jpg"}
+              src={process.env.PUBLIC_URL + "/assets/about/about-img-1.jpg"}
               alt=""
             />
           </div>
@@ -54,7 +54,7 @@ function WhoUs() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/about-img-2.jpg"}
+              src={process.env.PUBLIC_URL + "/assets/about/about-img-2.jpg"}
               alt=""
             />
           </div>
@@ -64,7 +64,7 @@ function WhoUs() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/about-img-3.jpg"}
+              src={process.env.PUBLIC_URL + "/assets/about/about-img-3.jpg"}
               alt=""
             />
           </div>

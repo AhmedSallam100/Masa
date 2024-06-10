@@ -46,7 +46,7 @@ function Landing() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home-gallery-1.png"}
+              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-1.png"}
               alt=""
             />
           </div>
@@ -56,7 +56,7 @@ function Landing() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home-gallery-2.png"}
+              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-2.png"}
               alt=""
             />
           </div>
@@ -66,7 +66,7 @@ function Landing() {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home-gallery-3.png"}
+              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-3.png"}
               alt=""
             />
           </div>

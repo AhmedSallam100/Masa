@@ -124,6 +124,7 @@
   outline: none;
   border: 2px solid var(--second-color);
   background-color: transparent;
+  cursor: pointer;
 }
 .header .container .btns .menu-btn {
   display: none;
@@ -137,7 +138,7 @@
   transition: var(--main-tran);
   background-color: var(--main-color);
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .header .container .ul-links {
     display: none;
   }
