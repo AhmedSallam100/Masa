@@ -75,7 +75,7 @@ const Header = () => {
               <Link to={"#members"}>عملائنا</Link>
             </li>
             <li className="li-link">
-              <Link to={"#reviews"}>الاقسام</Link>
+              <Link to={"departments"}>الاقسام</Link>
             </li>
             <li className="li-link">
               <Link to={"MediaCenter"}>المركز الاعلامي</Link>
@@ -95,19 +95,19 @@ const Header = () => {
                 <div className={`dropmenu ${openTwo ? "active" : "inactive"}`}>
                   <ul>
                     <DropMenuItem
-                      url={"/about"}
+                      url={"/"}
                       text={"الصناعات"}
                       onClick={handleCloseMenus}
                     />
                     <hr />
                     <DropMenuItem
-                      url={"/contact"}
+                      url={"/licenses"}
                       text={"التراخيص"}
                       onClick={handleCloseMenus}
                     />
                     <hr />
                     <DropMenuItem
-                      url={"/contact"}
+                      url={"/services"}
                       text={"الخدمات"}
                       onClick={handleCloseMenus}
                     />

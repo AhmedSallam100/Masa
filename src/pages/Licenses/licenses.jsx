@@ -2,6 +2,7 @@ import "./licenses.css";
 import MainTitle from "../../components/title/MainTitle";
 import { useState } from "react";
 
+
 const Licenses = () => {
   const [Currpage, setCurrPage] = useState(1);
   return (
@@ -24,67 +25,113 @@ function LicensesSection({ Currpage, setCurrPage }) {
             <div className="license-lists">
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-1.png"}
                   alt=""
                 />
-                <LicenseBox>
-                  <img
-                    src={
-                      process.env.PUBLIC_URL +
-                      "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-1.png"
                     }
-                    alt=""
-                  />
-                </LicenseBox>
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-1.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-2.png"}
                   alt=""
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-2.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-2.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-3.png"}
                   alt=""
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-3.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-3.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
+                  src={process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.jpg"}
+                  alt="عقد عنوان مصنع ماس الخليج"
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.jpg"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
-                />
-              </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
-                />
-              </LicenseBox>
+       
             </div>
           </div>
         ) : (
@@ -99,58 +146,112 @@ function LicensesSection({ Currpage, setCurrPage }) {
             <div className="license-lists">
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
-                  alt=""
+                  src={process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"}
+                  alt="عقد تاسيس مصنع ماس الخليج"
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
+                  src={process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"}
+                  alt="عقد مدن مصنع ماس الخليج"
                 />
+                <div className="btns">
+                  <a
+                    href={process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
+                  src={process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"}
+                  alt="Modon مصنع ماس الخليج 7680"
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
+           
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
+                  src={process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"}
+                  alt="شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه"
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
-                />
-              </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
-                />
-              </LicenseBox>
+
             </div>
           </div>
         ) : (
@@ -164,59 +265,113 @@ function LicensesSection({ Currpage, setCurrPage }) {
             data-aos-duration="1000"
           >
             <div className="license-lists">
-              <LicenseBox>
+            <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-5.png"}
                   alt=""
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-5.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-5.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-6.png"}
                   alt=""
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-6.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-6.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-7.png"}
                   alt=""
                 />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-7.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-7.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
+                  src={process.env.PUBLIC_URL + "/assets/licence/licence-8.png"}
                   alt=""
                 />
-              </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
-                  alt=""
-                />
-              </LicenseBox>
-              <LicenseBox>
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
-                  alt=""
-                />
+                <div className="btns">
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-8.png"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    عرض
+                  </a>
+                  <a
+                    href={
+                      process.env.PUBLIC_URL + "/assets/licence/licence-8.pdf"
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    download={true}
+                  >
+                    تحميل
+                  </a>
+                </div>
               </LicenseBox>
             </div>
           </div>
@@ -228,9 +383,10 @@ function LicensesSection({ Currpage, setCurrPage }) {
     </section>
   );
 }
-function LicenseBox({ children }) {
+export function LicenseBox({ children }) {
   return <div className="license-box">{children}</div>;
 }
+
 function Pagination({ Currpage, setCurrPage }) {
   return (
     <div className="pagination">

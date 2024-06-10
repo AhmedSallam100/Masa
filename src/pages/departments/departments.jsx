@@ -41,7 +41,7 @@ function MassDepartments() {
     </section>
   );
 }
-function MainDepartments({ src, text1 }) {
+export function MainDepartments({ src, text1 }) {
   return (
     <div>
       <img src={src} alt={text1} />

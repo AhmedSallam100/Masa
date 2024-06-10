@@ -27,6 +27,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  object-fit: cover;
 }
 .MediaCenter-Section .article p {
   z-index: 3223;
@@ -65,15 +66,14 @@
   pointer-events: none;
 }
 
-
 .MediaCenter-Section .article h1 span {
   color: var(--white-color);
 }
-.MediaCenter-Section .article .more{
-    color: #aec9f6;
-    z-index: 3223;
-    transition: all 0.3s;
-    cursor: pointer;
+.MediaCenter-Section .article .more {
+  color: #aec9f6;
+  z-index: 3223;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 .MediaCenter-Section .article span.cat {
   letter-spacing: 2px;
@@ -93,7 +93,7 @@
     padding: 1em;
   }
   .MediaCenter-Section .article h1,
-  .MediaCenter-Section .article p, 
+  .MediaCenter-Section .article p,
   .MediaCenter-Section .article .more {
     transform: translateY(0px);
   }

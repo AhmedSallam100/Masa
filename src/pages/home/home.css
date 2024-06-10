@@ -1,5 +1,7 @@
 .home {
-  padding-top: 100px;
+  padding-top: 20px;
+  margin-bottom: 300px;
+  position: relative;
 }
 .home .container {
   height: 100%;
@@ -50,12 +52,16 @@
 .home .container .gallery {
   display: flex;
   gap: 30px;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 .home .container .gallery .gallery-img {
   height: 500px;
   width: 170px;
   overflow: hidden;
   border-radius: 20px;
+  position: relative;
+  animation: moveUpDown 3s ease-in-out 1.5s infinite;
 }
 .home .container .gallery .gallery-img img {
   width: 100%;
@@ -67,30 +73,112 @@
   transform: scale(1.1);
 }
 .home .container .gallery .img-one {
+  animation-delay: 0s;
   margin-top: 100px;
 }
 .home .container .gallery .img-two {
+  animation-delay: 0.5s;
   margin-top: 60px;
 }
-@media (max-width:1160px){
-  .home .container{
+.home .container .gallery .img-three {
+  animation-delay: 1s;
+  margin-top: 20px;
+}
+.show-more-button{
+  display: block;
+  text-align: center;
+  color: var(--white-color);
+  background-color: #5e89cc;
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 30px auto;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  
+}
+
+.show-more-button:hover{
+  background-color: var(--main-color);
+}
+ .go-down {
+  color: var(--main-color);
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  
+
+}
+.go-down:hover {
+  color: var(--main-color-alt);
+}
+ .go-down svg {
+  animation: bouncing 1.5s infinite;
+  
+}
+.go-down svg path{
+  fill: var(--main-color);
+}
+
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+}
+}
+
+@media (max-width: 1160px) {
+  .home .container {
     flex-direction: column;
   }
   .home .container .text {
     width: 100%;
     text-align: center;
   }
-  .home .container .text p  {
+  .home .container .text p {
     width: 100%;
   }
-  .home .container .show-more a{
-   justify-content: center;
-   margin-bottom: 50px;
+  .home .container .show-more a {
+    justify-content: center;
+    margin-bottom: 50px;
   }
-  .home .container .gallery{
+  .home .container .gallery {
     width: 100%;
-   justify-content: center;
+    justify-content: center;
     padding-top: 20px;
   }
-
 }

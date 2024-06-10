@@ -9,6 +9,7 @@ import Departments from "./pages/departments/departments";
 import MediaCenter from "./pages/Media-center/MediaCenter";
 import Contact from "./pages/contact/contact";
 import Licenses from "./pages/Licenses/licenses";
+import Services from "./pages/Services/services";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/mediaCenter" element={<MediaCenter />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/licenses" element={<Licenses />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </BrowserRouter>
   );

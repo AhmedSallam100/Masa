@@ -32,6 +32,7 @@
   -moz-transition: 1s ease-in-out;
   -ms-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
+  object-fit: cover;
 }
 .container .main-departments div img:hover {
   border-bottom-right-radius: 10px;
@@ -64,7 +65,7 @@
   .container .main-departments div {
     width: 90%;
   }
-  .container .main-departments div img{
+  .container .main-departments div img {
     height: 400px;
   }
   .container .main-departments {

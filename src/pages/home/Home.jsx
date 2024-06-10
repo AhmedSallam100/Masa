@@ -1,16 +1,22 @@
 import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
-
+import { ServiceItem } from "../Services/services";
+import MainTitle from "../../components/title/MainTitle";
+import { MainDepartments } from "../departments/departments";
+import { LicenseBox } from "../Licenses/licenses";
 const Home = () => {
   return (
     <>
-      <Landing />
+      <HeroSection />
+      <HomeServicesSection />
+      <HomeDepartmentsSection />
+      <HomeLicensesSection />
     </>
   );
 };
 
-function Landing() {
+function HeroSection() {
   return (
     <div className="home">
       <div className="container">
@@ -72,8 +78,196 @@ function Landing() {
           </div>
         </div>
       </div>
+      <Link className="go-down">
+        <svg width="30px" height="30px" viewBox="0 0 16 16" version="1.1">
+          <path fill="#fff" d="M3 2v2l5 5 5-5v-2l-5 5z" />
+          <path fill="#444" d="M3 7v2l5 5 5-5v-2l-5 5z" />
+        </svg>
+      </Link>
     </div>
   );
 }
 
+function HomeServicesSection() {
+  return (
+    <section className="ServicesSection">
+      <div className="services">
+        <MainTitle text={"الخدمات"} />
+        <div className="container">
+          <ServiceItem
+            number={"01"}
+            text={
+              "سحب الاسلاك علي البارد واسلاك التربيط وشبك الارضيات بمقاسات وسماكات مختلفة تلبي احتياجات العملاء"
+            }
+          />
+          <ServiceItem
+            number={"02"}
+            text={
+              "قسم شبك الارضيات : في هذا القسم نقوم بتوفير شبك الارضيات بكافة المقاسات والتي تتراوح من 5,5 ملم الي 12 ملم نوع سابك"
+            }
+          />
+          <ServiceItem
+            number={"03"}
+            text={
+              "قسم الحديد النظامي (12 متر) بدون قص او تني ويتوفر في هذا القسم كافة مقاسات حديد التسليح من كافة انواع الحديد من مقاس 6 ملم الي مقاس 32"
+            }
+          />
+          <Link to={"/services"} className="show-more-button">
+            عرض المزيد
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+function HomeDepartmentsSection() {
+  return (
+    <section className="mass-departments">
+      <MainTitle text={"الاقسام"} />
+      <div className="container">
+        <div className="main-departments">
+          <MainDepartments
+            src={
+              process.env.PUBLIC_URL +
+              "/assets/doors/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
+            }
+            text1={"قسم الابواب"}
+          />
+          <MainDepartments
+            src={
+              process.env.PUBLIC_URL +
+              "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
+            }
+            text1={"قسم الحديد"}
+          />
+          <MainDepartments
+            src={
+              process.env.PUBLIC_URL +
+              "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
+            }
+            text1={"قسم هياكل وخزانات"}
+          />
+        </div>
+        <Link to={"/departments"} className="show-more-button">
+          عرض المزيد
+        </Link>
+      </div>
+    </section>
+  );
+}
+function HomeLicensesSection() {
+  return (
+    <section className="licenses-section">
+      <MainTitle text={"التراخيص"} />
+      <div className="container">
+        <div className="license-lists">
+          <LicenseBox>
+            <img
+              src={process.env.PUBLIC_URL + "/assets/licence/licence-1.png"}
+              alt=""
+            />
+            <div className="btns">
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-1.png"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                عرض
+              </a>
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-1.pdf"}
+                target="_blank"
+                rel="noreferrer"
+                download={true}
+              >
+                تحميل
+              </a>
+            </div>
+          </LicenseBox>
+          <LicenseBox>
+            <img
+              src={process.env.PUBLIC_URL + "/assets/licence/licence-2.png"}
+              alt=""
+            />
+            <div className="btns">
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-2.png"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                عرض
+              </a>
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-2.pdf"}
+                target="_blank"
+                rel="noreferrer"
+                download={true}
+              >
+                تحميل
+              </a>
+            </div>
+          </LicenseBox>
+          <LicenseBox>
+            <img
+              src={process.env.PUBLIC_URL + "/assets/licence/licence-3.png"}
+              alt=""
+            />
+            <div className="btns">
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-3.png"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                عرض
+              </a>
+              <a
+                href={process.env.PUBLIC_URL + "/assets/licence/licence-3.pdf"}
+                target="_blank"
+                rel="noreferrer"
+                download={true}
+              >
+                تحميل
+              </a>
+            </div>
+          </LicenseBox>
+          <LicenseBox>
+            <img
+              src={
+                process.env.PUBLIC_URL +
+                "/assets/licence/عنوان مصنع ماس الخليج.jpg"
+              }
+              alt="عقد عنوان مصنع ماس الخليج"
+            />
+            <div className="btns">
+              <a
+                href={
+                  process.env.PUBLIC_URL +
+                  "/assets/licence/عنوان مصنع ماس الخليج.jpg"
+                }
+                target="_blank"
+                rel="noreferrer"
+              >
+                عرض
+              </a>
+              <a
+                href={
+                  process.env.PUBLIC_URL +
+                  "/assets/licence/عنوان مصنع ماس الخليج.pdf"
+                }
+                target="_blank"
+                rel="noreferrer"
+                download={true}
+              >
+                تحميل
+              </a>
+            </div>
+          </LicenseBox>
+        </div>
+        <Link to={"/licenses"} className="show-more-button">
+          عرض المزيد
+        </Link>
+      </div>
+    </section>
+  );
+}
 export default Home;
