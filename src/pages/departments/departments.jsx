@@ -18,7 +18,7 @@ function MassDepartments() {
           <MainDepartments
             src={
               process.env.PUBLIC_URL +
-              "/assets/doors/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
+              "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
             }
             text1={"قسم الابواب"}
           />
@@ -46,7 +46,7 @@ export function MainDepartments({ src, text1 }) {
     <div>
       <img src={src} alt={text1} />
       <h1>{text1}</h1>
-      <button>زياره</button>
+      <button>عرض</button>
     </div>
   );
 }

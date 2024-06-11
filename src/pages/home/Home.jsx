@@ -5,12 +5,17 @@ import { ServiceItem } from "../Services/services";
 import MainTitle from "../../components/title/MainTitle";
 import { MainDepartments } from "../departments/departments";
 import { LicenseBox } from "../Licenses/licenses";
+import { Client } from "../clients/clients";
+import { clientsData } from "../../components/data/clientsData";
+import { IndustrySection } from "../industry/industry";
 const Home = () => {
   return (
     <>
       <HeroSection />
       <HomeServicesSection />
       <HomeDepartmentsSection />
+      <HomeClients />
+      <IndustrySection />
       <HomeLicensesSection />
     </>
   );
@@ -129,7 +134,7 @@ function HomeDepartmentsSection() {
           <MainDepartments
             src={
               process.env.PUBLIC_URL +
-              "/assets/doors/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
+              "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
             }
             text1={"قسم الابواب"}
           />
@@ -152,6 +157,22 @@ function HomeDepartmentsSection() {
           عرض المزيد
         </Link>
       </div>
+    </section>
+  );
+}
+function HomeClients() {
+  return (
+    <section className="clients-section">
+      <MainTitle text={"عملائنا"} />
+      <div className="container">
+        <Client obj={clientsData[0]} />
+        <Client obj={clientsData[1]} />
+        <Client obj={clientsData[2]} />
+        <Client obj={clientsData[3]} />
+      </div>
+      <Link to={"/clients"} className="show-more-button">
+          عرض المزيد
+        </Link>
     </section>
   );
 }

@@ -31,7 +31,7 @@ function MediaSection() {
             news={"نجاح شركه مصنع ماس الخليج الباهر"}
             src={
               process.env.PUBLIC_URL +
-              "/assets/doors/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
+              "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
             }
           />
           <Article
