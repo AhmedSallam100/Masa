@@ -23,7 +23,7 @@ export function IndustrySection() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <section className="industry-section">
+    <section className="industry-section" data-aos="fade-up" data-aos-duration="3000">
       <MainTitle text={"صناعتنا"} />
       <div className="container">
         <Swiper

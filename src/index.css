@@ -14,11 +14,11 @@
   --second-color: #2c4976;
   --third-color: #526a8e;
   --text-color: #1e1f22;
+  --footer-color: #01122e;
   --white-color: #fff;
   --black-color: #000;
   --bg-color: #f4f6fa;
   --main-tran: 0.3s;
-
 }
 ::selection {
   color: var(--white-color);
@@ -43,7 +43,6 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  direction: rtl;
   overflow-x: hidden;
   background-color: var(--bg-color);
 }

@@ -1,0 +1,74 @@
+.footer {
+  padding: 30px 0;
+  width: 100vw;
+  margin: auto;
+  margin-top: 80px;
+  background-color: var(--footer-color);
+}
+.footer * {
+  color: var(--white-color);
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.footer .container .top,
+.footer .container .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer img {
+  width: 220px;
+}
+.footer .container .top .footer-uls {
+  display: flex;
+  gap: 50px;
+}
+.footer .container .top .footer-uls .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer hr {
+  width: 75%;
+  margin: auto;
+  border: 1px solid var(--main-color);
+}
+.footer .bottom .footer-icons {
+  display: flex;
+  gap: 25px;
+}
+.footer .bottom .footer-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  font-size: 22px;
+  border-radius: 12px;
+  transition: var(--main-tran);
+  border: 1px solid var(--white-color);
+}
+.footer .bottom .footer-icons a i {
+  transition: var(--main-tran);
+}
+.footer .bottom .footer-icons a:hover {
+  border-radius: 50%;
+  background-color: var(--white-color);
+}
+.footer .bottom .footer-icons a:hover i {
+  color: var(--footer-color);
+}
+.footer .container .copy-right {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .footer .container .top,
+  .footer .container .bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

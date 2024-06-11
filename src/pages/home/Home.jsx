@@ -8,20 +8,22 @@ import { LicenseBox } from "../Licenses/licenses";
 import { Client } from "../clients/clients";
 import { clientsData } from "../../components/data/clientsData";
 import { IndustrySection } from "../industry/industry";
+import { useTranslation } from "react-i18next";
 const Home = () => {
+  const [t] = useTranslation("global");
   return (
     <>
-      <HeroSection />
+      <HeroSection t={t} />
       <HomeServicesSection />
       <HomeDepartmentsSection />
-      <HomeClients />
       <IndustrySection />
       <HomeLicensesSection />
+      <HomeClients />
     </>
   );
 };
 
-function HeroSection() {
+function HeroSection({ t }) {
   return (
     <div className="home">
       <div className="container">
@@ -29,15 +31,13 @@ function HeroSection() {
           <div
             className="interview-text"
             data-aos="fade-left"
-            data-aos-duration="1000"
+            data-aos-duration="2000"
           >
-            <h1>شركة مصنع ماس الخليج للصناعة</h1>
-            <h2>بالمملكة العربية السعودية</h2>
+            <h1>{t("hero.headerOne")}</h1>
+            <h2>{t("hero.headerTwo")}</h2>
           </div>
           <p data-aos="fade-up" data-aos-duration="1200">
-            تقوم شركه مصنع ماس لمنتجات الصناعه بانتاج العديد من المنتجات
-            المتميزة والتي تتمتع بجودة عالية وتلبي كثيرا من الاستخدامات الصناعية
-            والخدمات{" "}
+            {t("hero.description")}
           </p>
           <div
             className="show-more"
@@ -45,8 +45,8 @@ function HeroSection() {
             data-aos-duration="1200"
           >
             <Link to={"/about"}>
-              <span>اكتشف المزيد</span>
-              <i className="uil uil-arrow-left"></i>
+              <span>{t("hero.learnMore")}</span>
+              <i className={`uil uil-arrow-${t("hero.arrow")}`}></i>
             </Link>
           </div>
         </div>
@@ -83,20 +83,20 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      <Link className="go-down">
+      <a className="go-down" href="#services">
         <svg width="30px" height="30px" viewBox="0 0 16 16" version="1.1">
           <path fill="#fff" d="M3 2v2l5 5 5-5v-2l-5 5z" />
           <path fill="#444" d="M3 7v2l5 5 5-5v-2l-5 5z" />
         </svg>
-      </Link>
+      </a>
     </div>
   );
 }
 
 function HomeServicesSection() {
   return (
-    <section className="ServicesSection">
-      <div className="services">
+    <section className="ServicesSection" id="services">
+      <div className="services" data-aos="fade-up" data-aos-duration="2000">
         <MainTitle text={"الخدمات"} />
         <div className="container">
           <ServiceItem
@@ -127,7 +127,11 @@ function HomeServicesSection() {
 }
 function HomeDepartmentsSection() {
   return (
-    <section className="mass-departments">
+    <section
+      className="mass-departments"
+      data-aos="fade-right"
+      data-aos-duration="2000"
+    >
       <MainTitle text={"الاقسام"} />
       <div className="container">
         <div className="main-departments">
@@ -162,7 +166,11 @@ function HomeDepartmentsSection() {
 }
 function HomeClients() {
   return (
-    <section className="clients-section">
+    <section
+      className="clients-section"
+      data-aos="fade-down"
+      data-aos-duration="2000"
+    >
       <MainTitle text={"عملائنا"} />
       <div className="container">
         <Client obj={clientsData[0]} />
@@ -171,14 +179,18 @@ function HomeClients() {
         <Client obj={clientsData[3]} />
       </div>
       <Link to={"/clients"} className="show-more-button">
-          عرض المزيد
-        </Link>
+        عرض المزيد
+      </Link>
     </section>
   );
 }
 function HomeLicensesSection() {
   return (
-    <section className="licenses-section">
+    <section
+      className="licenses-section"
+      data-aos="fade-left"
+      data-aos-duration="2000"
+    >
       <MainTitle text={"التراخيص"} />
       <div className="container">
         <div className="license-lists">

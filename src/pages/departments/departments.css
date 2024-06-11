@@ -38,7 +38,7 @@
 .container .main-departments div h1 {
   margin-right: 10px;
 }
-.container .main-departments div button {
+.container .main-departments div a {
   width: 90%;
   border: none;
   border-radius: 20px;
@@ -55,7 +55,7 @@
   justify-content: center;
   cursor: pointer;
 }
-.container .main-departments div button:hover {
+.container .main-departments div a:hover {
   background-color: var(--second-color);
 }
 

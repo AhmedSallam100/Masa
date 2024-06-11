@@ -1,0 +1,31 @@
+.article .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.article .container .article-title {
+  margin-top: 50px;
+  font-size: 26px;
+}
+.article .container .article-img {
+  width: 100%;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.article .container .article-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--main-tran);
+}
+.article .container .article-img:hover img {
+  transform: scale(1.1);
+}
+
+.article .container .article-text {
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 7px rgb(163 185 210 / 20%);
+  background-color: var(--white-color);
+}

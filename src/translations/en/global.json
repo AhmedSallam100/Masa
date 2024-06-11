@@ -1,0 +1,23 @@
+{
+  "header": {
+    "contact": "Contact us",
+    "clients": "Clients",
+    "home": "Home",
+    "departments": "Departments",
+    "media": "Media Center",
+    "overview": "Overview",
+    "about": "About us",
+    "services": "Services",
+    "licenses": "Licenses",
+    "Ourindustry": "Our industry",
+    "industry": "Industry",
+    "english": "English"
+  },
+  "hero": {
+    "headerOne": "Diamonds Factory Company for Industry",
+    "headerTwo": "In the Kingdom of Saudi Arabia",
+    "description": "Mas Industrial Products Factory Company produces many distinguished products that are of high quality and meet many industrial uses and services",
+    "learnMore": "learn more",
+    "arrow" : "right"
+  }
+}

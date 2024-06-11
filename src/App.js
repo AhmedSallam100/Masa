@@ -14,6 +14,8 @@ import Clients from "./pages/clients/clients";
 import Industry from "./pages/industry/industry";
 import SecondDepartments from "./pages/SecondaryDepartments/SecondaryDepartment";
 import DepartmentDetails from "./pages/departmentDetails/departmentDetails";
+import Footer from "./components/footer/Footer";
+import Article from "./pages/article/Article";
 
 function App() {
   useEffect(() => {
@@ -29,12 +31,14 @@ function App() {
         <Route path="/secondDepartments" element={<SecondDepartments />} />
         <Route path="/departmentDetails" element={<DepartmentDetails />} />
         <Route path="/mediaCenter" element={<MediaCenter />} />
+        <Route path="/mediaCenter/:id" element={<Article />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/licenses" element={<Licenses />} />
         <Route path="/services" element={<Services />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/industry" element={<Industry />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
