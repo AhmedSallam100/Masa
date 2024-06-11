@@ -2,39 +2,38 @@ import React from "react";
 import CountUp from "react-countup";
 import "./about.css";
 import MainTitle from "../../components/title/MainTitle";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const [t] = useTranslation("global");
   return (
     <>
-      <WhoUs />
-      <Success />
+      <WhoUs t={t} />
+      <Success t={t} />
     </>
   );
 };
 
-function WhoUs() {
+function WhoUs({ t }) {
   return (
     <div className="about">
       <div className="container">
         <div className="about-text">
           <h1 data-aos="fade-left" data-aos-duration="1000">
-          <span> من نحن ؟</span>
+            <span> {t("about.headerThree")}</span>
             <br />
-            شركة ماس الخليج للصناعة
+            {t("about.headerTwo")}
           </h1>
           <p
             className="about-description"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            تقوم شركه مصنع ماس لمنتجات الصناعه بانتاج العديد من المنتجات
-            المتميزة والتي تتمتع بجودة عالية وتلبي كثيرا من الاستخدامات الصناعية
-            والخدمات وقد حقق نجاحا كبيرا وسمعة طيبة رغم عمره القصير من خلال حرصه
-            علي تطبيق اعلي معايير الجودة والاهتمام المستمر بتطوير خطوط الانتاج
+            {t("about.headerOne")}
           </p>
           <p className="experience" data-aos="fade-up" data-aos-duration="1000">
             <CountUp start={0} end={50} duration={3} />
-            <span> عام من الخبرة</span>
+            <span> {t("about.headerFour")}</span>
           </p>
         </div>
         <div className="gallery">
@@ -45,7 +44,7 @@ function WhoUs() {
           >
             <img
               src={process.env.PUBLIC_URL + "/assets/about/about-img-1.jpg"}
-              alt=""
+              alt={t("about.headerTwo")}
             />
           </div>
           <div
@@ -55,7 +54,7 @@ function WhoUs() {
           >
             <img
               src={process.env.PUBLIC_URL + "/assets/about/about-img-2.jpg"}
-              alt=""
+              alt={t("about.headerTwo")}
             />
           </div>
           <div
@@ -65,7 +64,7 @@ function WhoUs() {
           >
             <img
               src={process.env.PUBLIC_URL + "/assets/about/about-img-3.jpg"}
-              alt=""
+              alt={t("about.headerTwo")}
             />
           </div>
         </div>
@@ -74,48 +73,46 @@ function WhoUs() {
   );
 }
 
-function Success() {
+function Success({t}) {
   return (
     <div className="success">
-      <MainTitle text={"عوامل النجاح"} />
+      <MainTitle text={t("about.success")} />
       <div className="container">
         <SuccessItem
           effect={"left"}
           duration={"1000"}
           icon={"10-plus"}
-          text={"الالتزام التام باجراءات جودة النوعية بدون اي تنازل"}
+          text={t("about.sucessOne")}
         />
         <SuccessItem
           effect={"left"}
           duration={"1200"}
           icon={"check-circle"}
-          text={"توافق جميع المنتجات مع المقاييس"}
+          text={t("about.sucessTwo")}
         />
         <SuccessItem
           effect={"left"}
           duration={"1400"}
           icon={"robot"}
-          text={
-            "استخدام احدث الماكينات والتي تعمل بقدرات انتاجية عالية وبدقة متناهية"
-          }
+          text={t("about.sucessThree")}
         />
         <SuccessItem
           effect={"left"}
           duration={"1600"}
           icon={"constructor"}
-          text={"توظيف فنيين وعمالة علي درجة عالية من المهارة وبخبرات ممتازة "}
+          text={t("about.sucessFour")}
         />
         <SuccessItem
           effect={"left"}
           duration={"1800"}
           icon={"map-pin"}
-          text={"تسليم المواد الي الموقع في اي منطقة بالمملكة وبالوقت المحدد"}
+          text={t("about.sucessFive")}
         />
         <SuccessItem
           effect={"left"}
           duration={"1600"}
           icon={"users-alt"}
-          text={"رعاية مصالح العملاء"}
+          text={t("about.sucessSeven")}
         />
       </div>
     </div>
@@ -129,7 +126,7 @@ function SuccessItem(props) {
       data-aos={`fade-${props.effect}`}
       data-aos-duration={props.duration}
     >
-      <i className={`uil uil-${props.icon}`}></i>
+      <i className={`uil uil-${props.icon} ${localStorage.getItem("lang") === `"en"` ? "sucess-item-IconEn" : ""}`}></i>
       <p>{props.text}</p>
     </div>
   );

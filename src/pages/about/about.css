@@ -98,6 +98,7 @@
   color: var(--white-color);
   background-color: var(--main-color);
 }
+
 .success .container .success-box i:hover {
   border-radius: 50%;
 }
@@ -105,11 +106,16 @@
   font-size: 22px;
   font-weight: bold;
   margin-right: 35px;
+  margin-left: 40px;
   color: var(--main-color);
   transition: var(--main-tran);
 }
 .success .container .success-box:hover p {
   margin-right: 40px;
+}
+.success .container .sucess-item-IconEn {
+  right: inherit !important;
+  left: -17px;
 }
 @media (max-width: 1160px) {
   .about .container {

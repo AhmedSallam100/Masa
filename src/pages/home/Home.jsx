@@ -6,7 +6,6 @@ import MainTitle from "../../components/title/MainTitle";
 import { MainDepartments } from "../departments/departments";
 import { LicenseBox } from "../Licenses/licenses";
 import { Client } from "../clients/clients";
-import { clientsData } from "../../components/data/clientsData";
 import { IndustrySection } from "../industry/industry";
 import { useTranslation } from "react-i18next";
 const Home = () => {
@@ -14,11 +13,11 @@ const Home = () => {
   return (
     <>
       <HeroSection t={t} />
-      <HomeServicesSection />
-      <HomeDepartmentsSection />
-      <IndustrySection />
-      <HomeLicensesSection />
-      <HomeClients />
+      <HomeServicesSection t={t} />
+      <HomeDepartmentsSection t={t} />
+      <IndustrySection t={t} />
+      <HomeLicensesSection t={t} />
+      <HomeClients t={t} />
     </>
   );
 };
@@ -57,7 +56,10 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-1.png"}
+              src={
+                process.env.PUBLIC_URL +
+                "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
+              }
               alt=""
             />
           </div>
@@ -67,7 +69,10 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-2.png"}
+              src={
+                process.env.PUBLIC_URL +
+                "/assets/structures/e3c8fd0b-7370-4e10-9357-d075a797894a.jpg"
+              }
               alt=""
             />
           </div>
@@ -77,7 +82,10 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/home/home-gallery-3.png"}
+              src={
+                process.env.PUBLIC_URL +
+                "/assets/structures/1adc0ef5-a342-4b8d-8bc3-26304b6cea6e.jpg"
+              }
               alt=""
             />
           </div>
@@ -93,46 +101,31 @@ function HeroSection({ t }) {
   );
 }
 
-function HomeServicesSection() {
+function HomeServicesSection({ t }) {
   return (
     <section className="ServicesSection" id="services">
       <div className="services" data-aos="fade-up" data-aos-duration="2000">
-        <MainTitle text={"الخدمات"} />
+        <MainTitle text={t("header.services")} />
         <div className="container">
-          <ServiceItem
-            number={"01"}
-            text={
-              "سحب الاسلاك علي البارد واسلاك التربيط وشبك الارضيات بمقاسات وسماكات مختلفة تلبي احتياجات العملاء"
-            }
-          />
-          <ServiceItem
-            number={"02"}
-            text={
-              "قسم شبك الارضيات : في هذا القسم نقوم بتوفير شبك الارضيات بكافة المقاسات والتي تتراوح من 5,5 ملم الي 12 ملم نوع سابك"
-            }
-          />
-          <ServiceItem
-            number={"03"}
-            text={
-              "قسم الحديد النظامي (12 متر) بدون قص او تني ويتوفر في هذا القسم كافة مقاسات حديد التسليح من كافة انواع الحديد من مقاس 6 ملم الي مقاس 32"
-            }
-          />
+          <ServiceItem number={"01"} text={t("services.servicesOne")} />
+          <ServiceItem number={"02"} text={t("services.servicesTwo")} />
+          <ServiceItem number={"03"} text={t("services.servicesThree")} />
           <Link to={"/services"} className="show-more-button">
-            عرض المزيد
+            {t("header.showMore")}
           </Link>
         </div>
       </div>
     </section>
   );
 }
-function HomeDepartmentsSection() {
+function HomeDepartmentsSection({ t }) {
   return (
     <section
       className="mass-departments"
       data-aos="fade-right"
       data-aos-duration="2000"
     >
-      <MainTitle text={"الاقسام"} />
+      <MainTitle text={t("header.departments")} />
       <div className="container">
         <div className="main-departments">
           <MainDepartments
@@ -140,38 +133,75 @@ function HomeDepartmentsSection() {
               process.env.PUBLIC_URL +
               "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
             }
-            text1={"قسم الابواب"}
+            text1={t("departments.departmentsTwo")}
+            t={t("header.show")}
+            link="/secondDepartments"
+          />
+          <MainDepartments
+            src={
+              process.env.PUBLIC_URL +
+              "/assets/doors/wood/1aafe501-0025-40de-a7d2-65824eb3f096.jpg"
+            }
+            text1={t("departments.departmentsOne")}
+            t={t("header.show")}
+            link="/secondDepartments"
           />
           <MainDepartments
             src={
               process.env.PUBLIC_URL +
               "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
             }
-            text1={"قسم الحديد"}
+            text1={t("departments.departmentsFour")}
+            t={t("header.show")}
+            link="/secondDepartments"
           />
           <MainDepartments
             src={
               process.env.PUBLIC_URL +
               "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
             }
-            text1={"قسم هياكل وخزانات"}
+            text1={t("departments.departmentsThree")}
+            t={t("header.show")}
+            link="/secondDepartments"
           />
         </div>
         <Link to={"/departments"} className="show-more-button">
-          عرض المزيد
+          {t("header.showMore")}
         </Link>
       </div>
     </section>
   );
 }
-function HomeClients() {
+function HomeClients({ t }) {
+  const clientsData = [
+    {
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxVh1jny9HE2IDBz_0eu1Hvcvyk7XpE9HnbQ&s",
+      Clientsheader: `${t("clients.clientone")}`,
+      Clientstitle: `${t("clients.clientDesc1")}`,
+    },
+    {
+      src: "https://www.alrashed-steel.com/img/logo.png",
+      Clientsheader: `${t("clients.clientTwo")}`,
+      Clientstitle: `${t("clients.clientDesc2")}`,
+    },
+    {
+      src: "https://pbs.twimg.com/profile_images/1387684984899657730/D5CoXADH_400x400.jpg",
+      Clientsheader: `${t("clients.clientThree")}`,
+      Clientstitle: `${t("clients.clientDesc3")}`,
+    },
+    {
+      src: "https://pbs.twimg.com/media/EU6zljXXgAA6c_J.jpg",
+      Clientsheader: `${t("clients.clientFour")}`,
+      Clientstitle: `${t("clients.clientDesc4")}`,
+    },
+  ];
   return (
     <section
       className="clients-section"
       data-aos="fade-down"
       data-aos-duration="2000"
     >
-      <MainTitle text={"عملائنا"} />
+      <MainTitle text={t("header.clients")} />
       <div className="container">
         <Client obj={clientsData[0]} />
         <Client obj={clientsData[1]} />
@@ -179,19 +209,19 @@ function HomeClients() {
         <Client obj={clientsData[3]} />
       </div>
       <Link to={"/clients"} className="show-more-button">
-        عرض المزيد
+        {t("header.showMore")}
       </Link>
     </section>
   );
 }
-function HomeLicensesSection() {
+function HomeLicensesSection({ t }) {
   return (
     <section
       className="licenses-section"
       data-aos="fade-left"
       data-aos-duration="2000"
     >
-      <MainTitle text={"التراخيص"} />
+      <MainTitle text={t("header.licenses")} />
       <div className="container">
         <div className="license-lists">
           <LicenseBox>
@@ -205,7 +235,7 @@ function HomeLicensesSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                عرض
+                {t("header.show")}
               </a>
               <a
                 href={process.env.PUBLIC_URL + "/assets/licence/licence-1.pdf"}
@@ -213,7 +243,7 @@ function HomeLicensesSection() {
                 rel="noreferrer"
                 download={true}
               >
-                تحميل
+                {t("header.download")}
               </a>
             </div>
           </LicenseBox>
@@ -228,7 +258,7 @@ function HomeLicensesSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                عرض
+                {t("header.show")}
               </a>
               <a
                 href={process.env.PUBLIC_URL + "/assets/licence/licence-2.pdf"}
@@ -236,7 +266,7 @@ function HomeLicensesSection() {
                 rel="noreferrer"
                 download={true}
               >
-                تحميل
+                {t("header.download")}
               </a>
             </div>
           </LicenseBox>
@@ -251,7 +281,7 @@ function HomeLicensesSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                عرض
+                {t("header.show")}
               </a>
               <a
                 href={process.env.PUBLIC_URL + "/assets/licence/licence-3.pdf"}
@@ -259,7 +289,7 @@ function HomeLicensesSection() {
                 rel="noreferrer"
                 download={true}
               >
-                تحميل
+                {t("header.download")}
               </a>
             </div>
           </LicenseBox>
@@ -280,7 +310,7 @@ function HomeLicensesSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                عرض
+                {t("header.show")}
               </a>
               <a
                 href={
@@ -291,13 +321,13 @@ function HomeLicensesSection() {
                 rel="noreferrer"
                 download={true}
               >
-                تحميل
+                {t("header.download")}
               </a>
             </div>
           </LicenseBox>
         </div>
         <Link to={"/licenses"} className="show-more-button">
-          عرض المزيد
+          {t("header.showMore")}
         </Link>
       </div>
     </section>

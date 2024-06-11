@@ -2,9 +2,10 @@
 .container .main-departments {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .container .main-departments div {
-  width: 30%;
+  width: 23%;
   height: fit-content;
   margin: 20px auto;
   border-radius: 20px;
@@ -37,6 +38,8 @@
 }
 .container .main-departments div h1 {
   margin-right: 10px;
+  margin-left : 10px;
+  word-spacing: 3px;
 }
 .container .main-departments div a {
   width: 90%;

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const [t] = useTranslation("global");
   return (
     <div className="footer">
       <div className="container">
@@ -12,38 +14,39 @@ const Footer = () => {
               alt="Logo"
             />
           </div>
+<p>{t('about.headerOne')}</p>
           <div className="footer-uls">
             <ul className="footer-links">
               <li className="footer-link">
-                <Link to={"/"}>الرئيسية</Link>
+                <Link to={"/"}>{t('header.home')}</Link>
               </li>
               <li className="footer-link">
-                <Link to={"/about"}>من نحن</Link>
+                <Link to={"/about"}>{t('header.about')}</Link>
               </li>
               <li className="footer-link">
-                <Link to={"/contact"}>تواصل معنا</Link>
-              </li>
-            </ul>
-            <ul className="footer-links">
-              <li className="footer-link">
-                <Link to={"/clients"}>عملائنا</Link>
-              </li>
-              <li className="footer-link">
-                <Link to={"/departments"}>الاقسام</Link>
-              </li>
-              <li className="footer-link">
-                <Link to={"/MediaCenter"}>المركز الاعلامي</Link>
+                <Link to={"/contact"}>{t('header.contact')}</Link>
               </li>
             </ul>
             <ul className="footer-links">
               <li className="footer-link">
-                <Link to={"/industry"}>الصناعات</Link>
+                <Link to={"/clients"}>{t('header.clients')}</Link>
               </li>
               <li className="footer-link">
-                <Link to={"/licenses"}>التراخيص</Link>
+                <Link to={"/departments"}>{t('header.departments')}</Link>
               </li>
               <li className="footer-link">
-                <Link to={"/services"}>الخدمات</Link>
+                <Link to={"/MediaCenter"}>{t('header.media')}</Link>
+              </li>
+            </ul>
+            <ul className="footer-links">
+              <li className="footer-link">
+                <Link to={"/industry"}>{t('header.industry')}</Link>
+              </li>
+              <li className="footer-link">
+                <Link to={"/licenses"}>{t('header.licenses')}</Link>
+              </li>
+              <li className="footer-link">
+                <Link to={"/services"}>{t('header.services')}</Link>
               </li>
             </ul>
           </div>
@@ -73,7 +76,8 @@ const Footer = () => {
         </div>
         <hr />
         <p className="copy-right">
-          جميع الحقوق محفوظة لموقع شركة مصنع ماس الخليج للصناعة
+        {t('header.footer')}
+     
         </p>
       </div>
     </div>

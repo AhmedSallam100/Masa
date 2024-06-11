@@ -1,7 +1,9 @@
 import "./MediaCenter.css";
 import MainTitle from "../../components/title/MainTitle";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { format } from "date-fns";
 
 const MediaCenter = () => {
   return (
@@ -12,62 +14,43 @@ const MediaCenter = () => {
 };
 
 function MediaSection() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get("/articles");
+        setArticles(response?.data);
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchArticles();
+  }, []);
   return (
     <section className="MediaCenter-Section ">
       <MainTitle text={"المركز الاعلامي"} />
 
       <div className="container">
         <div class="wrap">
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={
-              process.env.PUBLIC_URL +
-              "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-            }
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={
-              process.env.PUBLIC_URL +
-              "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
-            }
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={
-              process.env.PUBLIC_URL +
-              "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-            }
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={process.env.PUBLIC_URL + "/assets/home/home-gallery-2.png"}
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={process.env.PUBLIC_URL + "/assets/home/home-gallery-1.png"}
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={process.env.PUBLIC_URL + "/assets/home/home-gallery-3.png"}
-          />
-          <Article
-            date="Oct 25 2024"
-            news={"نجاح شركه مصنع ماس الخليج الباهر"}
-            src={process.env.PUBLIC_URL + "/assets/home/home-gallery-2.png"}
-          />
+          {articles.map((article) => (
+            <Article
+              date={
+                article ? format(new Date(article.createdAt), "yyyy/M/d") : ""
+              }
+              news={article.title}
+              text={article.description}
+              src={article.image}
+              url={`/mediaCenter/${article._id}`}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
-function Article({ date, news, src }) {
+function Article({ date, news, src, text, url }) {
   return (
     <div class="article">
       <div class="overlay"></div>
@@ -81,13 +64,10 @@ function Article({ date, news, src }) {
       </h1>
 
       <img alt={news} src={src} />
-      <p>
-        {" "}
-        تقوم شركه مصنع ماس لمنتجات الصناعه بانتاج العديد من المنتجات المتميزة
-        والتي تتمتع بجودة عالية{" "}
-      </p>
-      <Link to="/myComponent" className="more">اقرأ المزيد ....</Link>
-
+      <p>{text}</p>
+      <Link to={url} className="more">
+        اقرأ المزيد ....
+      </Link>
     </div>
   );
 }

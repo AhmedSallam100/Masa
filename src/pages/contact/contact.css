@@ -79,6 +79,7 @@
 }
 .contact-us .container .contact-details ul li span {
   margin-right: 10px;
+  margin-left: 10px;
   color: var(--bg-color);
   font-family: "Cairo", sans-serif;
   font-weight: 700;

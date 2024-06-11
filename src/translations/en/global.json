@@ -11,13 +11,77 @@
     "licenses": "Licenses",
     "Ourindustry": "Our industry",
     "industry": "Industry",
-    "english": "English"
+    "english": "English",
+    "showMore": "Show More",
+    "show": "Show",
+    "download": "Download",
+    "footer": " All rights reserved to the Gulf Diamond Factory Company website."
   },
   "hero": {
     "headerOne": "Diamonds Factory Company for Industry",
     "headerTwo": "In the Kingdom of Saudi Arabia",
-    "description": "Mas Industrial Products Factory Company produces many distinguished products that are of high quality and meet many industrial uses and services",
-    "learnMore": "learn more",
-    "arrow" : "right"
+    "description": "Mass Al Khaleej Industrial Factory Company produces many distinguished products that are of high quality and meet many industrial uses and services",
+    "learnMore": "Learn More",
+    "arrow": "right"
+  },
+  "services": {
+    "servicesOne": "Cold drawing wires, binding wires, and floor mesh in different sizes and thicknesses to meet customer needs",
+    "servicesTwo": "Floor mesh section: In this section we provide floor mesh in all sizes, ranging from 5.5 mm to 12 mm, SABIC type.",
+    "servicesThree": "Regular steel section (12 metres) without cutting or bending. All sizes of reinforcement steel are available in this section of all types of iron from size 6 mm to size 32.",
+    "servicesFour": "Iron and Wood Doors Manufacturing Department: It designs and manufactures durable and beautiful doors that fully meet customers’ needs. This department can consist of a group of specialized workshops and equipment for working on various materials, including iron and wood. The department includes furnaces for melting and heating necessary to form iron accurately according to the required designs. There can also be machines for cutting, shaping, and welding to make frames, decorations, and intricate engravings. The material used is usually rust-resistant iron to ensure the durability of the doors under various weather conditions. Iron doors are designed with elegance and precision, taking into account decorative details that may include geometric shapes and decorative patterns.",
+    "servicesFive": "Cutting, bending and shaping of iron section. In this section, we cut and bend iron and prepare it for installation in the project directly, with the aim of speeding up the implementation of projects in record time and saving time and effort as well, which is more important than the low cost of implementation, as the net weight of the supplied iron is calculated, meaning that the customer does not bear any waste of iron. The net weight is calculated on it only, which results in a lower implementation cost and no accumulation of iron waste on the site and selling it as scrap or scrap. The latest automatic bending and cutting machines are used in this section. These machines can bend and cut rebar bars with diameters ranging from 6 mm to 40 mm. These machines can also Machines for processing all geometric shapes of iron",
+    "servicesSeven": "The Structures and Tanks Department is an important part of the manufacturing and construction process, where metal structures and tanks are designed and manufactured in different sizes and shapes to meet the needs of customers in diverse fields such as industry, construction, transportation, and storage. The department includes a group of specialized workshops and modern equipment used in manufacturing metal structures and tanks, such as laser cutting machines, bending and welding machines. A variety of materials are used in construction, such as stainless steel, aluminum, and steel, and the materials are selected according to the needs of the project and the surrounding environment. Structures and tanks are carefully designed according to the required technical standards and specifications, taking into account dynamic and static forces and different conditions of use. Products manufactured in this division include industrial and commercial building structures, towers and columns, metal platforms and ladders, and tanks for storing water, chemicals or fuel. Inspection and testing processes are strictly carried out to ensure the quality of the products and ensure their compliance with the specified specifications and standards. In general, the Structures and Tanks Department provides specialized and high-quality manufacturing services for the manufacture of metal structures and tanks, which contributes to the success of various construction and manufacturing projects."
+  },
+  "departments": {
+    "departmentsOne": "Department of Wooden Doors",
+    "departmentsTwo": "Department of Iron Doors",
+    "departmentsThree": "Department of Structures and Tanks",
+    "departmentsFour": "Rebar Department"
+  },
+  "clients": {
+    "clientone": "Al-Osaimi Steel Company",
+    "clientTwo": "Al-Rashed Steel Company",
+    "clientThree": "Al-Arkan Steel Company",
+    "clientFour": "Dar and Emaar Contracting Company",
+    "clientFive": "Real Estate Executors Company",
+    "clientSeven": "Mahmoud Steel Industrial Company",
+    "clientEight": "Ajyal Mall project",
+    "clientNine": "Al Othaim Park project",
+    "clientTen": "Mittal Iron Company",
+    "clientTwil": "Al Bawardi Industrial Company",
+    "clienttwilOne": "Benaat Environmental  Company",
+    "clientTwilTwo": "Enmaa Real Estate Company",
+    "clientDesc1": "Al-Osaimi Steel Company is specialized in the manufacture and trade of iron and steel. It was established in the Kingdom of Saudi Arabia and is considered one of the leading companies in this field in the Kingdom. The company manufactures a variety of iron and steel products, including barbed wire, bars, nails and pipes. panels and other products used in a wide range of industrial and construction applications.",
+    "clientDesc2": "Al-Rashed Company is a family company founded in 1950 AD in the city of Al-Khobar, the Kingdom of Saudi Arabia. The group carries out its economic activities in many and diverse sectors such as: trade, industry, contracting, real estate development, and services. Over these years, Al-Rashed Group has had a pioneering role in infrastructure development. of the Kingdom, and its doors were always open to the cadres and talents of the nation’s youth.",
+    "clientDesc3": "Al-Arkan Steel Company is a Saudi company specialized in the manufacture and trade of iron and steel. The company was established to meet the needs of the local and regional market for iron and steel products. The company offers a variety of products including barbed wire, pipes, bars, panels, and other Related products that are used in various industries and applications such as building, engineering, and construction industries.",
+    "clientDesc4": "The company seeks to be a leader in the real estate development industry by constantly striving to deserve the trust and respect of customers and employees by adhering to professional and ethical standards. And by always putting the customer first. The company also aims to help achieve the dream of every family in the Kingdom.  Saudi Arabia to own its own residence and the company also works as a contractor for developing residential real estate construction projects.",
+    "clientDesc5": "The Othaim Park project is a large entertainment and commercial project located in the city of Riyadh in the Kingdom of Saudi Arabia. Al Othaim Park is considered part of the Othaim Mall complex, which includes a large and diverse commercial center, in addition to an entertainment area that contains a group of games and various recreational facilities, which... “It makes it a favorite destination for families and individuals to spend a good time.",
+    "clientDesc6": "The Ajyal Mall project is a commercial complex extending over a total area of ​​more than 100,000 square meters in the Ajyal residential neighborhood in Dhahran. It includes a group of stores, restaurants, and cafes. It also provides various entertainment facilities, indoor and outdoor gardens, and a health and sports center.",
+    "clientDesc7": "Mahmoud Steel Industrial Company was established in Dammam, Kingdom of Saudi Arabia in 2008 AD. It is one of the leading companies in the production of small bridge sections (beams - EPIM), angles and panels, which comply with international standards and specifications, with a total production of 80,000 metric tons annually. The company has occupied a great position in the Saudi market.",
+    "clientDesc8": "Al-Mufafdoun Real Estate Development Company is a real estate company in the Kingdom of Saudi Arabia. The company works in the field of developing real estate projects, including residential, commercial and entertainment properties. The company aims to provide high-quality projects that meet the needs of customers and are characterized by innovation and modern design. It can Its activities include developing residential complexes, commercial buildings, tourist resorts, and other real estate projects.",
+    "clientDesc9": "Enmaa Real Estate Company's activities include developing luxury residential complexes, commercial projects and commercial centers, tourist resorts, hotel projects, industrial and logistics projects, and other large and diverse real estate projects.",
+    "clientDesc10": "Benayat Environmental Services Company is a company specialized in the field of environmental preservation and sustainable development. The company was established with the aim of providing solutions and services that contribute to preserving the environment and improving sustainable development, such as the use of renewable energy, waste management, awareness of environmental risks, and other services. and initiatives.",
+    "clientDesc11": "Over the past thirty years, Albwardy Tools has developed a strong infrastructure in the Middle East and North Africa region, thus becoming one of the leaders in its business. Albwardy, through its long-term vision, has modified its infrastructure to be fully equipped Good for facing any local and global changes that may occur.",
+    "clientDesc12": "Matal International Trading Company is one of the professional companies in the trade of commercial and industrial iron, as it relies on providing its types in dealing with giant internal and external companies and factories and strong competition within the Saudi market with major industrial and commercial iron traders. The company started with a plan and an insightful vision surrounded by knowledge of the Saudi and regional market and its needs and market vocabulary,"
+  },
+  "about": {
+    "headerOne": "Mas Industrial Products Factory Company produces many distinguished products that are of high quality and meet many industrial uses and services. It has achieved great success and a good reputation despite its short lifespan through its keenness to apply the highest quality standards and its continuous interest in developing production lines.",
+    "headerTwo": "Mas Industrial Products Factory Company",
+    "headerThree": "Who Us ?",
+    "headerFour": "years of experience",
+    "success": "success factors",
+    "sucessOne": "Full commitment to quality procedures without any compromise",
+    "sucessTwo": "Full commitment to quality procedures without any compromise",
+    "sucessThree": "Using the latest machines that operate with high production capabilities and extreme precision.",
+    "sucessFour": "Employing highly skilled technicians and workers with excellent experience",
+    "sucessFive": "Delivery of materials to the site in any region of the Kingdom and at the specified time.",
+    "sucessSeven": "Caring for clients' interests"
+  },
+  "Contact" : {
+    "headerOne": "Send",
+    "headerTwo": "Name",
+    "headerThree": "Full Name",
+    "headerFour": "Email",
+    "headerFive": "Message"
   }
-}
+  }

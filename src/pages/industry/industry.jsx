@@ -7,8 +7,10 @@ import React, { useRef } from "react";
 import "./industry.css";
 import { ProjectsPhotos } from "../../components/data/DepartmentsPhoto";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const Industry = () => {
+  
   return (
     <>
       <IndustrySection />
@@ -16,6 +18,7 @@ const Industry = () => {
   );
 };
 export function IndustrySection() {
+  const [t] = useTranslation("global");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -24,8 +27,8 @@ export function IndustrySection() {
   };
   return (
     <section className="industry-section" data-aos="fade-up" data-aos-duration="3000">
-      <MainTitle text={"صناعتنا"} />
-      <div className="container">
+      <MainTitle text={t('header.Ourindustry')} />
+      <div className={`container `}>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}

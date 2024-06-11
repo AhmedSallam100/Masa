@@ -1,4 +1,4 @@
-.ServicesSection{
+.ServicesSection {
   padding-top: 30px;
 }
 .services .container {
@@ -17,20 +17,34 @@
 .service-box .service-number span {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   right: -25px;
+  transform: translateY(-50%);
   padding: 8px 21px;
   font-size: 20px;
   border-radius: 14px;
   transition: var(--main-tran);
   color: var(--white-color);
   background-color: var(--third-color);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.service-box .service-number .service-span-en {
+  right: inherit;
+  left: -40px;
 }
 .service-box .service-description {
   font-size: 18px;
   margin-right: 30px;
+  margin-left: 30px;
   transition: var(--main-tran);
+  -webkit-transition: var(--main-tran);
+  -moz-transition: var(--main-tran);
+  -ms-transition: var(--main-tran);
+  -o-transition: var(--main-tran);
 }
+.service-box .service-description
 .service-box:hover .service-description {
   margin-right: 38px;
 }

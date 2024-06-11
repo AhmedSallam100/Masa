@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./contact.css";
 
 
@@ -9,19 +10,20 @@ const Contact = () => {
   );
 };
 function ContactUs() {
+  const [t] = useTranslation("global");
   return (
     <section className="contact-us">
       <div className="container">
-        <ContactDetails />
-        <ContactForm />
+        <ContactDetails t={t} />
+        <ContactForm t={t} />
       </div>
     </section>
   );
 }
-function ContactDetails() {
+function ContactDetails({t}) {
   return (
     <div className="contact-details">
-      <h1>تواصل معنا</h1>
+      <h1>{t('header.contact')}</h1>
       <ul>
         <li>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -47,23 +49,23 @@ function ContactDetails() {
     </div>
   );
 }
-function ContactForm() {
+function ContactForm({t}) {
   return (
     <div className="contact-form">
       <form>
         <div className="form-group">
-          <label>الاسم</label>
-          <input type="text" placeholder="الاسم بالكامل" />
+          <label>{t('Contact.headerTwo')}</label>
+          <input type="text" placeholder={t('Contact.headerThree')} />
         </div>
         <div className="form-group">
-          <label>الايميل</label>
-          <input type="text" placeholder="البريد الالكتروني" />
+          <label>{t('Contact.headerFour')}</label>
+          <input type="text" placeholder={t('Contact.headerFour')} />
         </div>
         <div className="form-group">
-          <label>الرسالة</label>
-          <textarea placeholder="الرسالة">الرسالة</textarea>
+          <label>{t('Contact.headerFive')}</label>
+          <textarea placeholder={t('Contact.headerFive')}></textarea>
         </div>
-        <button type="submit">ارسال</button>
+        <button type="submit">{t('Contact.headerOne')}</button>
       </form>
     </div>
   );

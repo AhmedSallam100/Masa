@@ -1,36 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./article.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const Article = () => {
+  const [articleInfo, setArticleInfo] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchSingleArticle = async () => {
+      try {
+        const response = await axios.get(`/articles/${id}`);
+        setArticleInfo(response?.data);
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSingleArticle();
+  }, []);
+
   return (
     <div className="article">
       <div className="container">
-        <h1 className="article-title">عنوان المقال</h1>
+        <h1 className="article-title">{articleInfo?.title}</h1>
         <div className="article-img">
-          <img
-            src={"https://www.apec.sa.com/images/2020/03/15/img_2382.jpg"}
-            alt="article"
-          />
+          <img src={articleInfo?.image} alt="article" />
         </div>
-        <p className="article-text">
-          قسم الهياكل والخزانات هو جزء مهم في عملية التصنيع والبناء، حيث يتم
-          تصميم وتصنيع الهياكل المعدنية والخزانات بأحجام وأشكال مختلفة لتلبية
-          احتياجات العملاء في مجالات متنوعة مثل الصناعة، والبناء، والنقل،
-          والتخزين. يتضمن القسم مجموعة من الورش المتخصصة والمعدات الحديثة التي
-          تستخدم في تصنيع الهياكل المعدنية والخزانات، مثل آلات القطع بالليزر
-          وآلات الانحناء واللحام. يتم استخدام مجموعة متنوعة من المواد في البناء،
-          مثل الفولاذ المقاوم للصدأ، والألومنيوم، والصلب، ويتم اختيار المواد
-          وفقًا لاحتياجات المشروع والبيئة المحيطة. يتم تصميم الهياكل والخزانات
-          بدقة وفقًا للمعايير والمواصفات الفنية المطلوبة، مع مراعاة القوى
-          الديناميكية والاستاتيكية وظروف الاستخدام المختلفة. تشمل المنتجات التي
-          يتم تصنيعها في هذا القسم هياكل المباني الصناعية والتجارية، والأبراج
-          والأعمدة، والمنصات والسلالم المعدنية، والخزانات لتخزين المياه أو
-          المواد الكيميائية أو الوقود. يتم العمل بدقة على عمليات التفتيش
-          والاختبار لضمان جودة المنتجات والتأكد من مطابقتها للمواصفات والمعايير
-          المحددة.بشكل عام، يقدم قسم الهياكل والخزانات خدمات تصنيع متخصصة وعالية
-          الجودة لصناعة الهياكل المعدنية والخزانات، مما يساهم في نجاح مشاريع
-          البناء والتصنيع المختلفة.
-        </p>
+        <p className="article-text">{articleInfo?.description}</p>
       </div>
     </div>
   );

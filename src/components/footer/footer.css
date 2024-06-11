@@ -22,6 +22,24 @@
 .footer img {
   width: 220px;
 }
+.footer .container .top p {
+width: 43%;
+}
+@media (max-width: 1200px) {
+  .footer .container .top,
+  .footer .container .bottom {
+    flex-direction: column;
+  }
+  .footer .container .top p {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .industry-img{
+    margin-bottom: 20px;
+  }
+}
 .footer .container .top .footer-uls {
   display: flex;
   gap: 50px;
@@ -64,6 +82,7 @@
 }
 .footer .container .copy-right {
   text-align: center;
+  word-spacing: 3px;
 }
 @media (max-width: 767px) {
   .footer .container .top,

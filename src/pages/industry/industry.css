@@ -4,7 +4,9 @@
   height: 100%;
   margin-bottom: 100px;
   background-color: var(--bg-color);
+  direction: rtl !important;
 }
+
 
 .swiper-slide {
   text-align: center;

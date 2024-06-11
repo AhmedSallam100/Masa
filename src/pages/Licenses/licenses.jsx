@@ -1,6 +1,7 @@
 import "./licenses.css";
 import MainTitle from "../../components/title/MainTitle";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 
 const Licenses = () => {
@@ -12,9 +13,10 @@ const Licenses = () => {
   );
 };
 function LicensesSection({ Currpage, setCurrPage }) {
+  const [t] = useTranslation("global");
   return (
     <section className="licenses-section">
-      <MainTitle text={"التراخيص"} />
+      <MainTitle text={t('header.licenses')} />
       <div className="container">
         {Currpage === 1 ? (
           <div
@@ -36,7 +38,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                 {t('header.show')}
                   </a>
                   <a
                     href={
@@ -46,7 +48,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+             {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -63,7 +65,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                      {t('header.show')}
                   </a>
                   <a
                     href={
@@ -73,7 +75,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                   {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -90,7 +92,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                      {t('header.show')}
                   </a>
                   <a
                     href={
@@ -100,7 +102,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                         {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -157,7 +159,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                   {t('header.show')}
                   </a>
                   <a
                     href={
@@ -167,7 +169,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                    {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -182,7 +184,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                      {t('header.show')}
                   </a>
                   <a
                     href={
@@ -192,7 +194,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                     {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -209,7 +211,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                        {t('header.show')}
                   </a>
                   <a
                     href={
@@ -219,7 +221,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                        {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -237,7 +239,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                         {t('header.show')}
                   </a>
                   <a
                     href={
@@ -247,7 +249,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                         {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -278,7 +280,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                         {t('header.show')}
                   </a>
                   <a
                     href={
@@ -288,7 +290,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                         {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -305,7 +307,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                         {t('header.show')}
                   </a>
                   <a
                     href={
@@ -315,7 +317,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                      {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -332,7 +334,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                         {t('header.show')}
                   </a>
                   <a
                     href={
@@ -342,7 +344,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                         {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
@@ -359,7 +361,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    عرض
+                         {t('header.show')}
                   </a>
                   <a
                     href={
@@ -369,7 +371,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                    تحميل
+                         {t('header.download')}
                   </a>
                 </div>
               </LicenseBox>
