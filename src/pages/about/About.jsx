@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import "./about.css";
 import MainTitle from "../../components/title/MainTitle";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 const About = () => {
   const [t] = useTranslation("global");
@@ -73,47 +74,45 @@ function WhoUs({ t }) {
   );
 }
 
-function Success({t}) {
+function Success({ t }) {
+  const [sucesses, setSucesses] = useState([]);
+  const [lang, setLang] = useState(localStorage.getItem("lang") || `"ar"`);
+
+  useEffect(() => {
+    const fetchSucesses = async () => {
+      try {
+        const response = await axios.get("/sucesses");
+        setSucesses(response?.data);
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSucesses();
+
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem("lang") || `"ar"`);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
   return (
     <div className="success">
       <MainTitle text={t("about.success")} />
       <div className="container">
-        <SuccessItem
-          effect={"left"}
-          duration={"1000"}
-          icon={"10-plus"}
-          text={t("about.sucessOne")}
-        />
-        <SuccessItem
-          effect={"left"}
-          duration={"1200"}
-          icon={"check-circle"}
-          text={t("about.sucessTwo")}
-        />
-        <SuccessItem
-          effect={"left"}
-          duration={"1400"}
-          icon={"robot"}
-          text={t("about.sucessThree")}
-        />
-        <SuccessItem
-          effect={"left"}
-          duration={"1600"}
-          icon={"constructor"}
-          text={t("about.sucessFour")}
-        />
-        <SuccessItem
-          effect={"left"}
-          duration={"1800"}
-          icon={"map-pin"}
-          text={t("about.sucessFive")}
-        />
-        <SuccessItem
-          effect={"left"}
-          duration={"1600"}
-          icon={"users-alt"}
-          text={t("about.sucessSeven")}
-        />
+        {sucesses.map((success, index) => (
+          <SuccessItem
+            effect={"left"}
+            duration={"1000"}
+            text={
+              lang === `"ar"` ? success?.description : success?.enDescription
+            }
+          />
+        ))}
       </div>
     </div>
   );
@@ -126,7 +125,11 @@ function SuccessItem(props) {
       data-aos={`fade-${props.effect}`}
       data-aos-duration={props.duration}
     >
-      <i className={`uil uil-${props.icon} ${localStorage.getItem("lang") === `"en"` ? "sucess-item-IconEn" : ""}`}></i>
+      <i
+        className={`uil  uil-check-circle ${
+          localStorage.getItem("lang") === `"en"` ? "sucess-item-IconEn" : ""
+        }`}
+      ></i>
       <p>{props.text}</p>
     </div>
   );

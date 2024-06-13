@@ -3,14 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./industry.css";
 import { ProjectsPhotos } from "../../components/data/DepartmentsPhoto";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 const Industry = () => {
-  
   return (
     <>
       <IndustrySection />
@@ -18,6 +18,20 @@ const Industry = () => {
   );
 };
 export function IndustrySection() {
+  const [industries, setIndustries] = useState([]);
+
+  useEffect(() => {
+    const fetchIndustries = async () => {
+      try {
+        const response = await axios.get("/industries");
+        setIndustries(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchIndustries();
+  }, []);
+
   const [t] = useTranslation("global");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -26,8 +40,12 @@ export function IndustrySection() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <section className="industry-section" data-aos="fade-up" data-aos-duration="3000">
-      <MainTitle text={t('header.Ourindustry')} />
+    <section
+      className="industry-section"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
+      <MainTitle text={t("header.Ourindustry")} />
       <div className={`container `}>
         <Swiper
           spaceBetween={30}
@@ -36,16 +54,15 @@ export function IndustrySection() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
         >
-          {ProjectsPhotos.map((src) => (
+          {industries.map((industry) => (
             <SwiperSlide>
               {" "}
-              <img src={process.env.PUBLIC_URL + src} alt="industry" />
+              <img src={industry?.image} alt="industry" />
             </SwiperSlide>
           ))}
 

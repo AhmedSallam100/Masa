@@ -6,10 +6,11 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 
 const Header = () => {
   const [t, i18n] = useTranslation("global");
-  const [lang, setLang] = useLocalStorage("lang", "");
+  const [lang, setLang] = useLocalStorage("lang", "ar");
   const [openOne, setOpenOne] = useState(false);
   const [openTwo, setOpenTwo] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+
   const dir = i18n.dir();
   useEffect(() => {
     const handleCloseMenu = (e) => {

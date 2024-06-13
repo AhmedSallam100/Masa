@@ -15,6 +15,7 @@
   --third-color: #526a8e;
   --text-color: #1e1f22;
   --footer-color: #01122e;
+  --red-color: #e74b4b;
   --white-color: #fff;
   --black-color: #000;
   --bg-color: #f4f6fa;
@@ -43,8 +44,14 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
   background-color: var(--bg-color);
+}
+body,html{
+  overflow-x: hidden;
+}
+:dir(ltr){
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
 }
 .container {
   width: 90vw;

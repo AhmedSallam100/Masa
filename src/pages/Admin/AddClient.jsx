@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import "./dashboard.css";
 import { useTranslation } from "react-i18next";
 
-const AddArticle = () => {
+const AddClient = () => {
   const [t] = useTranslation("global");
   const [title, setTitle] = useState("");
   const [enTitle, setEnTitle] = useState("");
@@ -14,13 +14,13 @@ const AddArticle = () => {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  let addNewArticle = async (e) => {
+  let addNewClient = async (e) => {
     e.preventDefault();
     if (!title) {
-      return toast.error("برجاء كتابة عنوان..!");
+      return toast.error("برجاء كتابة الاسم..!");
     }
     if (!enTitle) {
-      return toast.error("برجاء كتابة عنوان..!");
+      return toast.error("برجاء كتابة الاسم..!");
     }
     if (!description) {
       return toast.error("برجاء كتابة وصف..!");
@@ -32,16 +32,16 @@ const AddArticle = () => {
       return toast.error("برجاء رفع الصورة..!");
     }
 
-    const articleData = new FormData();
-    articleData.set("title", title);
-    articleData.set("enTitle", enTitle);
-    articleData.set("description", description);
-    articleData.set("enDescription", enDescription);
-    articleData.append("image", image);
+    const clientData = new FormData();
+    clientData.set("title", title);
+    clientData.set("enTitle", enTitle);
+    clientData.set("description", description);
+    clientData.set("enDescription", enDescription);
+    clientData.append("image", image);
 
     try {
       setLoading(true);
-      const response = await axios.post("/articles", articleData, {
+      const response = await axios.post("/clients", clientData, {
         withCredentials: true,
       });
       if (response.status === 200) {
@@ -59,22 +59,22 @@ const AddArticle = () => {
       <div className="container">
         <Sidebar />
         <div className="add-content">
-          <form onSubmit={addNewArticle}>
+          <form onSubmit={addNewClient}>
             <div className="mixed-inp">
               <div className="input-group">
-                <label>العنوان</label>
+                <label>الاسم</label>
                 <input
                   type="text"
-                  placeholder="العنوان"
+                  placeholder="الاسم"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 />
               </div>
               <div className="input-group">
-                <label>Title</label>
+                <label>Name</label>
                 <input
                   type="text"
-                  placeholder="title"
+                  placeholder="name"
                   value={enTitle}
                   onChange={(e) => setEnTitle(e.target.value)}
                 />
@@ -82,17 +82,17 @@ const AddArticle = () => {
             </div>
             <div className="mixed-inp">
               <div className="input-group">
-                <label>المقال</label>
+                <label>نبذة</label>
                 <textarea
-                  placeholder="المقال"
+                  placeholder="نبذة"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
               <div className="input-group">
-                <label>Artilce</label>
+                <label>About</label>
                 <textarea
-                  placeholder="artilce"
+                  placeholder="about"
                   value={enDescription}
                   onChange={(e) => setEnDescription(e.target.value)}
                 ></textarea>
@@ -110,7 +110,7 @@ const AddArticle = () => {
               />
             </div>
             <button disabled={loading}>
-              {loading ? t('dash.headerTwo') : t('dash.headerOne')}
+            {loading ? t('dash.headerTwo') : t('dash.headerOne')}
             </button>
           </form>
         </div>
@@ -119,4 +119,4 @@ const AddArticle = () => {
   );
 };
 
-export default AddArticle;
+export default AddClient;

@@ -69,7 +69,7 @@
     "headerTwo": "Mas Industrial Products Factory Company",
     "headerThree": "Who Us ?",
     "headerFour": "years of experience",
-    "success": "success factors",
+    "success": "Success Factors",
     "sucessOne": "Full commitment to quality procedures without any compromise",
     "sucessTwo": "Full commitment to quality procedures without any compromise",
     "sucessThree": "Using the latest machines that operate with high production capabilities and extreme precision.",
@@ -77,11 +77,25 @@
     "sucessFive": "Delivery of materials to the site in any region of the Kingdom and at the specified time.",
     "sucessSeven": "Caring for clients' interests"
   },
-  "Contact" : {
+  "Contact": {
     "headerOne": "Send",
     "headerTwo": "Name",
     "headerThree": "Full Name",
     "headerFour": "Email",
     "headerFive": "Message"
+  },
+  "sidebar": {
+    "headerOne": "Add Article",
+    "headerTwo": "Add Department",
+    "headerThree": "Add Department Photos",
+    "headerFour": "Add Industry",
+    "headerFive": "Add License",
+    "headerSeven": "Add Client",
+    "headerNine": "Add Service",
+    "headerTwil": "Add Success Factor"
+  },
+  "dash" : {
+    "headerOne" : "Confirm",
+    "headerTwo" : "Uploading..."
   }
-  }
+}

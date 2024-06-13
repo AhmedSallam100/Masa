@@ -3,13 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../industry/industry.css";
 import { DoorsWood } from "../../components/data/DepartmentsPhoto";
 import { DoorsIron } from "../../components/data/DepartmentsPhoto";
 import { IronData } from "../../components/data/DepartmentsPhoto";
 import { structuresData } from "../../components/data/DepartmentsPhoto";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const DepartmentDetails = () => {
   return (
@@ -19,6 +21,21 @@ const DepartmentDetails = () => {
   );
 };
 function IndustrySection() {
+  const [departmentInfo, setDepartmentInfo] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchSingleDepartment = async () => {
+      try {
+        const response = await axios.get(`/departments/${id}`);
+        setDepartmentInfo(response?.data);
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchSingleDepartment();
+  }, []);
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -27,7 +44,7 @@ function IndustrySection() {
   };
   return (
     <section className="industry-section">
-      <MainTitle text={"الابواب الخشب"} />
+      <MainTitle text={departmentInfo?.title} />
       <div className="container">
         <Swiper
           spaceBetween={30}
@@ -44,10 +61,10 @@ function IndustrySection() {
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
         >
-          {DoorsWood.map((src) => (
+          {departmentInfo?.images.map((image) => (
             <SwiperSlide>
               {" "}
-              <img src={process.env.PUBLIC_URL + src} alt="industry" />
+              <img src={image} alt="industry" />
             </SwiperSlide>
           ))}
 

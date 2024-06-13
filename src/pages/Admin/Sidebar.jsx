@@ -1,29 +1,43 @@
 import { Link, NavLink } from "react-router-dom";
 import "./dashboard.css";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
+  const [t] = useTranslation("global");
   return (
     <div className="sidebar">
       <ul className="ul-links">
         <NavLink className="ul-link" to={"/dashboard/add-article"}>
           <i className="uil uil-clipboard-alt"></i>
-          <Link to={"/dashboard/add-article"}>اضافة مقال</Link>
+          <Link to={"/dashboard/add-article"}>{t('sidebar.headerOne')}</Link>
         </NavLink>
-        <NavLink className="ul-link" to={"/dashboard/add-sheet"}>
+        <NavLink className="ul-link" to={"/dashboard/add-department"}>
           <i className="uil uil-clipboard-alt"></i>
-          <Link to={"/dashboard/add-sheet"}>اضافة شيت</Link>
+          <Link to={"/dashboard/add-department"}>{t('sidebar.headerTwo')}</Link>
         </NavLink>
-        <NavLink className="ul-link" to={"/dashboard/add-board"}>
+        <NavLink className="ul-link" to={"/dashboard/add-department-images"}>
+          <i className="uil uil-clipboard-alt"></i>
+          <Link to={"/dashboard/add-department-images"}>{t('sidebar.headerThree')}</Link>
+        </NavLink>
+        <NavLink className="ul-link" to={"/dashboard/add-industry"}>
           <i className="uil uil-clipboard"></i>
-          <Link to={"/dashboard/add-board"}>اضافة سبورة</Link>
+          <Link to={"/dashboard/add-industry"}>{t('sidebar.headerFour')}</Link>
         </NavLink>
-        <NavLink className="ul-link" to={"/dashboard/add-video"}>
+        <NavLink className="ul-link" to={"/dashboard/add-lisense"}>
           <i className="uil uil-video"></i>
-          <Link to={"/dashboard/add-video"}>اضافة فيديو</Link>
+          <Link to={"/dashboard/add-lisense"}>{t('sidebar.headerFive')}</Link>
         </NavLink>
-        <NavLink className="ul-link" to={"/dashboard/add-audio"}>
+        <NavLink className="ul-link" to={"/dashboard/add-client"}>
           <i className="uil uil-record-audio"></i>
-          <Link to={"/dashboard/add-audio"}>اضافة تسجيل</Link>
+          <Link to={"/dashboard/add-client"}>{t('sidebar.headerSeven')}</Link>
+        </NavLink>
+        <NavLink className="ul-link" to={"/dashboard/add-service"}>
+          <i className="uil uil-record-audio"></i>
+          <Link to={"/dashboard/add-service"}>{t('sidebar.headerNine')}</Link>
+        </NavLink>
+        <NavLink className="ul-link" to={"/dashboard/add-sucess"}>
+          <i className="uil uil-record-audio"></i>
+          <Link to={"/dashboard/add-sucess"}>{t('sidebar.headerTwil')}</Link>
         </NavLink>
       </ul>
     </div>

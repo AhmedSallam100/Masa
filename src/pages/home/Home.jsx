@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 import { ServiceItem } from "../Services/services";
@@ -8,10 +8,18 @@ import { LicenseBox } from "../Licenses/licenses";
 import { Client } from "../clients/clients";
 import { IndustrySection } from "../industry/industry";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Loader from "../../components/loader/Loader";
+
 const Home = () => {
   const [t] = useTranslation("global");
   return (
     <>
+      {/* <Loader /> */}
       <HeroSection t={t} />
       <HomeServicesSection t={t} />
       <HomeDepartmentsSection t={t} />
@@ -56,10 +64,7 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={
-                process.env.PUBLIC_URL +
-                "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-              }
+              src={process.env.PUBLIC_URL + "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"}
               alt=""
             />
           </div>
@@ -69,10 +74,7 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={
-                process.env.PUBLIC_URL +
-                "/assets/structures/e3c8fd0b-7370-4e10-9357-d075a797894a.jpg"
-              }
+              src={process.env.PUBLIC_URL + "/assets/structures/e3c8fd0b-7370-4e10-9357-d075a797894a.jpg"}
               alt=""
             />
           </div>
@@ -82,10 +84,7 @@ function HeroSection({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={
-                process.env.PUBLIC_URL +
-                "/assets/structures/1adc0ef5-a342-4b8d-8bc3-26304b6cea6e.jpg"
-              }
+              src={process.env.PUBLIC_URL + "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"}
               alt=""
             />
           </div>

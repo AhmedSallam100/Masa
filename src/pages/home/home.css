@@ -111,7 +111,7 @@
  .go-down {
   color: var(--main-color);
   position: absolute;
-  top: 130%;
+  top: 120%;
   left: 50%;
   transform: translateX(-50%);
   transition: 0.5s;

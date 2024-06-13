@@ -5,43 +5,34 @@ import Sidebar from "./Sidebar";
 import "./dashboard.css";
 import { useTranslation } from "react-i18next";
 
-const AddArticle = () => {
+const AddDepartment = () => {
   const [t] = useTranslation("global");
   const [title, setTitle] = useState("");
   const [enTitle, setEnTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [enDescription, setEnDescription] = useState("");
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  let addNewArticle = async (e) => {
+  let addNewDepartment = async (e) => {
     e.preventDefault();
+
     if (!title) {
-      return toast.error("برجاء كتابة عنوان..!");
+      return toast.error("برجاء كتابة الاسم..!");
     }
     if (!enTitle) {
-      return toast.error("برجاء كتابة عنوان..!");
-    }
-    if (!description) {
-      return toast.error("برجاء كتابة وصف..!");
-    }
-    if (!enDescription) {
-      return toast.error("برجاء كتابة وصف..!");
+      return toast.error("برجاء كتابة الاسم..!");
     }
     if (!image) {
       return toast.error("برجاء رفع الصورة..!");
     }
 
-    const articleData = new FormData();
-    articleData.set("title", title);
-    articleData.set("enTitle", enTitle);
-    articleData.set("description", description);
-    articleData.set("enDescription", enDescription);
-    articleData.append("image", image);
+    const departmentData = new FormData();
+    departmentData.set("title", title);
+    departmentData.set("enTitle", enTitle);
+    departmentData.append("image", image);
 
     try {
       setLoading(true);
-      const response = await axios.post("/articles", articleData, {
+      const response = await axios.post("/departments", departmentData, {
         withCredentials: true,
       });
       if (response.status === 200) {
@@ -59,13 +50,13 @@ const AddArticle = () => {
       <div className="container">
         <Sidebar />
         <div className="add-content">
-          <form onSubmit={addNewArticle}>
+          <form onSubmit={addNewDepartment}>
             <div className="mixed-inp">
               <div className="input-group">
-                <label>العنوان</label>
+                <label>الاسم</label>
                 <input
                   type="text"
-                  placeholder="العنوان"
+                  placeholder="الاسم"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 />
@@ -80,24 +71,6 @@ const AddArticle = () => {
                 />
               </div>
             </div>
-            <div className="mixed-inp">
-              <div className="input-group">
-                <label>المقال</label>
-                <textarea
-                  placeholder="المقال"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </div>
-              <div className="input-group">
-                <label>Artilce</label>
-                <textarea
-                  placeholder="artilce"
-                  value={enDescription}
-                  onChange={(e) => setEnDescription(e.target.value)}
-                ></textarea>
-              </div>
-            </div>
             <label>الصورة</label>
             <div className="input-group">
               <div className="upload-content">
@@ -110,7 +83,7 @@ const AddArticle = () => {
               />
             </div>
             <button disabled={loading}>
-              {loading ? t('dash.headerTwo') : t('dash.headerOne')}
+            {loading ? t('dash.headerTwo') : t('dash.headerOne')}
             </button>
           </form>
         </div>
@@ -119,4 +92,4 @@ const AddArticle = () => {
   );
 };
 
-export default AddArticle;
+export default AddDepartment;

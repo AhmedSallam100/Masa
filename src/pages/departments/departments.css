@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 .container .main-departments div {
-  width: 23%;
+  width: 40%;
   height: fit-content;
   margin: 20px auto;
   border-radius: 20px;
@@ -62,7 +62,8 @@
   background-color: var(--second-color);
 }
 
-@media (max-width: 1080px) {
+
+@media (max-width: 1100px) {
   .container .main-departments div {
     width: 90%;
   }
@@ -71,5 +72,10 @@
   }
   .container .main-departments {
     flex-direction: column;
+  }
+}
+@media(min-width:1570px){
+  .container .main-departments div {
+    width: 23%;
   }
 }

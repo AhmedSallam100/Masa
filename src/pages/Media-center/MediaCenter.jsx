@@ -15,32 +15,48 @@ const MediaCenter = () => {
 
 function MediaSection() {
   const [articles, setArticles] = useState([]);
+  const [lang, setLang] = useState(localStorage.getItem("lang") || `"ar"`);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const response = await axios.get("/articles");
         setArticles(response?.data);
-        console.log(response?.data);
       } catch (error) {
         console.log(error);
       }
     };
     fetchArticles();
   }, []);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem("lang") || `"ar"`);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   return (
-    <section className="MediaCenter-Section ">
+    <section className="MediaCenter-Section">
       <MainTitle text={"المركز الاعلامي"} />
 
       <div className="container">
-        <div class="wrap">
+        <div className="wrap">
           {articles.map((article) => (
             <Article
+              key={article._id}
               date={
                 article ? format(new Date(article.createdAt), "yyyy/M/d") : ""
               }
-              news={article.title}
-              text={article.description}
+              news={lang === `"ar"` ? article?.title : article?.enTitle}
+              text={
+                lang === `"ar"` ? article?.description : article?.enDescription
+              }
               src={article.image}
               url={`/mediaCenter/${article._id}`}
             />
@@ -50,12 +66,13 @@ function MediaSection() {
     </section>
   );
 }
+
 function Article({ date, news, src, text, url }) {
   return (
-    <div class="article">
-      <div class="overlay"></div>
-      <div class="wrap-cat">
-        <span class="cat" data-hover={date}>
+    <div className="article">
+      <div className="overlay"></div>
+      <div className="wrap-cat">
+        <span className="cat" data-hover={date}>
           {date}
         </span>
       </div>

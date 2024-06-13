@@ -83,5 +83,19 @@
     "headerThree": "الاسم بالكامل",
     "headerFour": "البريد الالكتروني",
     "headerFive": "الرسالة"
+  },
+  "sidebar": {
+    "headerOne": "اضافة مقالة",
+    "headerTwo": "اضافة قسم",
+    "headerThree": "اضافة صور القسم",
+    "headerFour": "اضافة صناعة",
+    "headerFive": "اضافة ترخيص",
+    "headerSeven": "اضافة عميل",
+    "headerNine": "اضافة خدمة",
+    "headerTwil": "اضافة عامل نجاح"
+  },
+  "dash" : {
+    "headerOne" : "تاكيد",
+    "headerTwo" : "جاري الرفع ..."
   }
 }

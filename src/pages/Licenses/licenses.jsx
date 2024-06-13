@@ -1,8 +1,8 @@
 import "./licenses.css";
 import MainTitle from "../../components/title/MainTitle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import axios from "axios";
 
 const Licenses = () => {
   const [Currpage, setCurrPage] = useState(1);
@@ -13,10 +13,25 @@ const Licenses = () => {
   );
 };
 function LicensesSection({ Currpage, setCurrPage }) {
+  const [licenses, setLicenses] = useState([]);
+
+  useEffect(() => {
+    const fetchLicenses = async () => {
+      try {
+        const response = await axios.get("/licenses");
+        setLicenses(response?.data);
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchLicenses();
+  }, []);
+
   const [t] = useTranslation("global");
   return (
     <section className="licenses-section">
-      <MainTitle text={t('header.licenses')} />
+      <MainTitle text={t("header.licenses")} />
       <div className="container">
         {Currpage === 1 ? (
           <div
@@ -38,7 +53,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                 {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -48,7 +63,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-             {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
@@ -65,7 +80,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                      {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -75,7 +90,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                   {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
@@ -92,7 +107,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                      {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -102,19 +117,23 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                         {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.jpg"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/licence/عنوان مصنع ماس الخليج.jpg"
+                  }
                   alt="عقد عنوان مصنع ماس الخليج"
                 />
                 <div className="btns">
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.jpg"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عنوان مصنع ماس الخليج.jpg"
                     }
                     target="_blank"
                     rel="noreferrer"
@@ -123,7 +142,8 @@ function LicensesSection({ Currpage, setCurrPage }) {
                   </a>
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/عنوان مصنع ماس الخليج.pdf"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عنوان مصنع ماس الخليج.pdf"
                     }
                     target="_blank"
                     rel="noreferrer"
@@ -133,7 +153,6 @@ function LicensesSection({ Currpage, setCurrPage }) {
                   </a>
                 </div>
               </LicenseBox>
-       
             </div>
           </div>
         ) : (
@@ -148,112 +167,133 @@ function LicensesSection({ Currpage, setCurrPage }) {
             <div className="license-lists">
               <LicenseBox>
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"
+                  }
                   alt="عقد تاسيس مصنع ماس الخليج"
                 />
                 <div className="btns">
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عقد تاسيس مصنع ماس الخليج-images-1.jpg"
                     }
                     target="_blank"
                     rel="noreferrer"
                   >
-                   {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/عقد تاسيس مصنع ماس الخليج.pdf"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عقد تاسيس مصنع ماس الخليج.pdf"
                     }
                     target="_blank"
                     rel="noreferrer"
                     download={true}
                   >
-                    {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"
+                  }
                   alt="عقد مدن مصنع ماس الخليج"
                 />
                 <div className="btns">
                   <a
-                    href={process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"}
+                    href={
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عقد مدن مصنع ماس الخليج-images-0.jpg"
+                    }
                     target="_blank"
                     rel="noreferrer"
                   >
-                      {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/عقد مدن مصنع ماس الخليج.pdf"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/عقد مدن مصنع ماس الخليج.pdf"
                     }
                     target="_blank"
                     rel="noreferrer"
                     download={true}
                   >
-                     {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
               <LicenseBox>
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"
+                  }
                   alt="Modon مصنع ماس الخليج 7680"
                 />
                 <div className="btns">
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/Modon مصنع ماس الخليج 7680-images-0.jpg"
                     }
                     target="_blank"
                     rel="noreferrer"
                   >
-                        {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/Modon مصنع ماس الخليج 7680.pdf"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/Modon مصنع ماس الخليج 7680.pdf"
                     }
                     target="_blank"
                     rel="noreferrer"
                     download={true}
                   >
-                        {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
-           
+
               <LicenseBox>
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"}
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"
+                  }
                   alt="شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه"
                 />
                 <div className="btns">
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.jpg"
                     }
                     target="_blank"
                     rel="noreferrer"
                   >
-                         {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
-                      process.env.PUBLIC_URL + "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.pdf"
+                      process.env.PUBLIC_URL +
+                      "/assets/licence/شهادة اشتراك المنشأة - شركة مصنع ماس الخليج للصناعه.pdf"
                     }
                     target="_blank"
                     rel="noreferrer"
                     download={true}
                   >
-                         {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
-
             </div>
           </div>
         ) : (
@@ -267,7 +307,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
             data-aos-duration="1000"
           >
             <div className="license-lists">
-            <LicenseBox>
+              <LicenseBox>
                 <img
                   src={process.env.PUBLIC_URL + "/assets/licence/licence-5.png"}
                   alt=""
@@ -280,7 +320,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                         {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -290,7 +330,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                         {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
@@ -307,7 +347,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                         {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -317,7 +357,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                      {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
@@ -334,7 +374,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                         {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -344,7 +384,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                         {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
@@ -361,7 +401,7 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                         {t('header.show')}
+                    {t("header.show")}
                   </a>
                   <a
                     href={
@@ -371,10 +411,40 @@ function LicensesSection({ Currpage, setCurrPage }) {
                     rel="noreferrer"
                     download={true}
                   >
-                         {t('header.download')}
+                    {t("header.download")}
                   </a>
                 </div>
               </LicenseBox>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {Currpage === 4 ? (
+          <div
+            className={`license-page${Currpage}`}
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <div className="license-lists">
+              {licenses.map((license) => (
+                <LicenseBox>
+                  <img src={license.image} alt="" />
+                  <div className="btns">
+                    <a href={license.image} target="_blank" rel="noreferrer">
+                      {t("header.show")}
+                    </a>
+                    <a
+                      href={license.pdf}
+                      target="_blank"
+                      rel="noreferrer"
+                      download={true}
+                    >
+                      {t("header.download")}
+                    </a>
+                  </div>
+                </LicenseBox>
+              ))}
             </div>
           </div>
         ) : (
@@ -419,6 +489,12 @@ function Pagination({ Currpage, setCurrPage }) {
           onClick={() => setCurrPage(3)}
         >
           3
+        </li>
+        <li
+          className={Currpage === 4 ? "active" : ""}
+          onClick={() => setCurrPage(4)}
+        >
+          4
         </li>
         <li
           onClick={() =>

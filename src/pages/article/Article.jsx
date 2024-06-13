@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Article = () => {
   const [articleInfo, setArticleInfo] = useState(null);
+  const [lang, setLang] = useState(localStorage.getItem("lang") || `"ar"`);
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,16 +19,32 @@ const Article = () => {
       }
     };
     fetchSingleArticle();
+
+    const handleStorageChange = () => {
+      setLang(localStorage.getItem("lang") || `"ar"`);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, []);
 
   return (
     <div className="article">
       <div className="container">
-        <h1 className="article-title">{articleInfo?.title}</h1>
+        <h1 className="article-title">
+          {lang === `"ar"` ? articleInfo?.title : articleInfo?.enTitle}
+        </h1>
         <div className="article-img">
           <img src={articleInfo?.image} alt="article" />
         </div>
-        <p className="article-text">{articleInfo?.description}</p>
+        <p className="article-text">
+          {lang === `"ar"`
+            ? articleInfo?.description
+            : articleInfo?.enDescription}
+        </p>
       </div>
     </div>
   );
