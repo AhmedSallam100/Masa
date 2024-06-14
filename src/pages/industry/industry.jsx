@@ -5,7 +5,6 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import React, { useEffect, useRef, useState } from "react";
 import "./industry.css";
-import { ProjectsPhotos } from "../../components/data/DepartmentsPhoto";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 import axios from "axios";

@@ -34,6 +34,7 @@ import ShowAllServices from "./pages/Admin/ShowAllServices";
 import ShowAllSucesses from "./pages/Admin/ShowAllSucesses";
 import AddImagesToDepartment from "./pages/Admin/AddImagesToDepartment";
 import NotFound from "./pages/404/404";
+import LoginDash from "./pages/login-dash/LoginDash";
 
 axios.defaults.baseURL = `http://localhost:3001/api`;
 axios.defaults.withCredentials = true;
@@ -51,6 +52,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/dashboard" element={<LoginDash />} />
 
         <Route path="/dashboard/add-article" element={<AddArticle />} />
         <Route path="/mediaCenter" element={<MediaCenter />} />
