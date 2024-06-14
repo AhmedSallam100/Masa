@@ -53,12 +53,13 @@ function HeroSection({ t }) {
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className={`mySwiper ${localStorage.getItem("lang") === `"ar"` ? 'swiper-ar' : 'swiper-en'}`}
+          className={`mySwiper ${localStorage.getItem("lang") === `"ar"` ? 'swiper-ar' : localStorage.getItem("lang") === `"en"` ? 'swiper-en' : ''}`}
+          key={localStorage.getItem("lang")}
         >
           <SwiperSlide>
             <div
               className={`text ${
-                localStorage.getItem("lang") === `"ar"` ? "text-ar" : "text-en"
+            localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
               }`}
             >
               <div
@@ -128,7 +129,7 @@ function HeroSection({ t }) {
           <SwiperSlide>
             <div
               className={`text ${
-                localStorage.getItem("lang") === `"ar"` ? "text-ar" : "text-en"
+                localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
               }`}
             >
               <div
@@ -211,7 +212,7 @@ function HeroSection({ t }) {
           <SwiperSlide>
             <div
               className={`text ${
-                localStorage.getItem("lang") === `"ar"` ? "text-ar" : "text-en"
+                 localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
               }`}
             >
               <div
