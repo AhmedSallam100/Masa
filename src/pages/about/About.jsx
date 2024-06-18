@@ -54,7 +54,7 @@ function WhoUs({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/about/about-img-2.jpg"}
+            src={process.env.PUBLIC_URL + "/assets/about/about-img-2.jpg"}
               alt={t("about.headerTwo")}
             />
           </div>
@@ -64,7 +64,7 @@ function WhoUs({ t }) {
             data-aos-duration="1000"
           >
             <img
-              src={process.env.PUBLIC_URL + "/assets/about/about-img-3.jpg"}
+                 src={process.env.PUBLIC_URL + "/assets/about/about-img-3.jpg"}
               alt={t("about.headerTwo")}
             />
           </div>

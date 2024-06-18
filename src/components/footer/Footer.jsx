@@ -14,7 +14,7 @@ const Footer = () => {
               alt="Logo"
             />
           </div>
-<p>{t('about.headerOne')}</p>
+<p>{t('hero.description')}</p>
           <div className="footer-uls">
             <ul className="footer-links">
               <li className="footer-link">

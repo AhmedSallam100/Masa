@@ -84,6 +84,92 @@ function HeroSection({ t }) {
                 </Link>
               </div>
             </div>
+
+            <div className="gallery gallery-three">
+              <div
+                className="gallery-img img-one"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
+                  }
+                  alt=""
+                />
+              </div>
+              <div
+                className="gallery-img img-two"
+                data-aos="zoom-out"
+                data-aos-duration="1000"
+              >
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/iron-department/s-l1600.jpg"
+                  }
+                  alt=""
+                />
+              </div>
+              <div
+                className="gallery-img img-three"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+                       <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/doors/wood/22658edd-ba77-4435-82d0-26fba83b5139.jpg"
+                  }
+                  alt=""
+                />
+ 
+              </div>
+              <div
+                className="gallery-img img-four"
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
+               <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
+                  }
+                  alt=""
+                />
+              </div>
+            </div>
+
+          </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className={`text ${
+                localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
+              }`}
+            >
+              <div
+                className="interview-text"
+                data-aos="fade-left"
+                data-aos-duration="2000"
+              >
+                <h1>{t("hero.headerOne")}</h1>
+                <h2>{t("hero.headerTwo")}</h2>
+              </div>
+              <p data-aos="fade-up" data-aos-duration="1200">
+                {t("hero.descriptionTwo")}
+              </p>
+              <div
+                className="show-more"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                <Link to={"/contact"}>
+                  <span>{t("hero.headerFive")}</span>
+                  <i className={`uil uil-arrow-${t("hero.arrow")}`}></i>
+                </Link>
+              </div>
+            </div>
             <div className="gallery">
               <div
                 className="gallery-img img-one"
@@ -93,7 +179,7 @@ function HeroSection({ t }) {
                 <img
                   src={
                     process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
+                    "/assets/iron-department/12.jpg"
                   }
                   alt=""
                 />
@@ -125,11 +211,12 @@ function HeroSection({ t }) {
                 />
               </div>
             </div>
+
           </SwiperSlide>
           <SwiperSlide>
             <div
               className={`text ${
-                localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
+                 localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
               }`}
             >
               <div
@@ -141,15 +228,15 @@ function HeroSection({ t }) {
                 <h2>{t("hero.headerTwo")}</h2>
               </div>
               <p data-aos="fade-up" data-aos-duration="1200">
-                {t("hero.descriptionTwo")}
+                {t("hero.descriptionThree")}
               </p>
               <div
                 className="show-more"
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
-                <Link to={"/contact"}>
-                  <span>{t("hero.headerFive")}</span>
+                <Link to={"/services"}>
+                  <span>{t("hero.headerSeven")}</span>
                   <i className={`uil uil-arrow-${t("hero.arrow")}`}></i>
                 </Link>
               </div>
@@ -203,90 +290,6 @@ function HeroSection({ t }) {
                   src={
                     process.env.PUBLIC_URL +
                     "/assets/doors/wood/b09469e2-7f8a-4303-93cb-b20ed752ba34.jpg"
-                  }
-                  alt=""
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              className={`text ${
-                 localStorage.getItem("lang") === `"ar"` ? "text-ar" :  localStorage.getItem("lang") === `"en"` ? 'text-en' : ''
-              }`}
-            >
-              <div
-                className="interview-text"
-                data-aos="fade-left"
-                data-aos-duration="2000"
-              >
-                <h1>{t("hero.headerOne")}</h1>
-                <h2>{t("hero.headerTwo")}</h2>
-              </div>
-              <p data-aos="fade-up" data-aos-duration="1200">
-                {t("hero.descriptionThree")}
-              </p>
-              <div
-                className="show-more"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                <Link to={"/services"}>
-                  <span>{t("hero.headerSeven")}</span>
-                  <i className={`uil uil-arrow-${t("hero.arrow")}`}></i>
-                </Link>
-              </div>
-            </div>
-            <div className="gallery gallery-three">
-              <div
-                className="gallery-img img-one"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/structures/78c30868-ec8d-4753-a6ad-2fe085a9368c.jpg"
-                  }
-                  alt=""
-                />
-              </div>
-              <div
-                className="gallery-img img-two"
-                data-aos="zoom-out"
-                data-aos-duration="1000"
-              >
-                <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/iron-department/5af7d4a9-d78f-46eb-8155-39e80185df10.jpg"
-                  }
-                  alt=""
-                />
-              </div>
-              <div
-                className="gallery-img img-three"
-                data-aos="fade-down"
-                data-aos-duration="1000"
-              >
-                       <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/doors/wood/22658edd-ba77-4435-82d0-26fba83b5139.jpg"
-                  }
-                  alt=""
-                />
- 
-              </div>
-              <div
-                className="gallery-img img-four"
-                data-aos="fade-down"
-                data-aos-duration="1000"
-              >
-               <img
-                  src={
-                    process.env.PUBLIC_URL +
-                    "/assets/doors/iron/b02c3890-095f-404a-a7c8-e36b5e52f0ca.jpg"
                   }
                   alt=""
                 />
